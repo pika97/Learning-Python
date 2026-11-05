@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyOeqZxjCG+aDrFfPBi/Okm1",
+      "authorship_tag": "ABX9TyNqH/BYdBGZclIDTze5Zseh",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -6862,6 +6862,210 @@
           ]
         }
       ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Detecting inconsistencies"
+      ],
+      "metadata": {
+        "id": "tJI6H9chTWRa"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Imagine this is your quality incident dataset."
+      ],
+      "metadata": {
+        "id": "xobeHAyvWg6g"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "df = pd.DataFrame({\n",
+        "                  \"QI\":[101, 102, 103, 104, 105, 106],\n",
+        "                  \"Department\":[\n",
+        "                                \"Manufacturing\",\n",
+        "                                \"QC\",\n",
+        "                                \"Engineering\",\n",
+        "                                \"QA\",\n",
+        "                                \"QC\",\n",
+        "                                \"engineering\"],\n",
+        "                  \"Priority\": [\"High\", \"Low\", \"High\", \"Low\", \"High\", \"Low\"],\n",
+        "                  \"Closure\": [12, 0, 12, 15, -2, 5]\n",
+        "                  })\n",
+        "\n",
+        "print(df)\n",
+        "\n",
+        "print(df[\"Department\"].unique())      # shows all unique values\n",
+        "print(df[\"Closure\"].unique())\n",
+        "\n",
+        "df[\"Department\"] = df[\"Department\"].str.strip().str.title()  # .str.stripe removes unnecessary spaces\n",
+        "df[\"Priority\"] = df[\"Priority\"].str.strip().str.title()      # .str.title capitalises 1st letter\n",
+        "\n",
+        "print(df)\n",
+        "\n",
+        "# identify invalid values\n",
+        "print(df[df[\"Closure\"]<0])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CHessU4JjTh2",
+        "outputId": "2a4f8b65-b289-44dd-9c80-202c147c7321"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "    QI     Department Priority  Closure\n",
+            "0  101  Manufacturing     High       12\n",
+            "1  102             QC      Low        0\n",
+            "2  103    Engineering     High       12\n",
+            "3  104             QA      Low       15\n",
+            "4  105             QC     High       -2\n",
+            "5  106    engineering      Low        5\n",
+            "['Manufacturing' 'QC' 'Engineering' 'QA' 'engineering']\n",
+            "[12  0 15 -2  5]\n",
+            "    QI     Department Priority  Closure\n",
+            "0  101  Manufacturing     High       12\n",
+            "1  102             Qc      Low        0\n",
+            "2  103    Engineering     High       12\n",
+            "3  104             Qa      Low       15\n",
+            "4  105             Qc     High       -2\n",
+            "5  106    Engineering      Low        5\n",
+            "    QI Department Priority  Closure\n",
+            "4  105         Qc     High       -2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Outlier Analysis"
+      ],
+      "metadata": {
+        "id": "guyoyI8GuDSu"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "An outlier is not automatically an error. It may represent a genuine and important event."
+      ],
+      "metadata": {
+        "id": "CK8gC7p0C5ka"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q1 = 25th percentile.\n",
+        "Q3 = 75th percentile.\n",
+        "IQR = the middle 50% spread of the data."
+      ],
+      "metadata": {
+        "id": "3FfqzOLXGClF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "closure = np.array([10, 19, 12, 13, 14, 80])\n",
+        "print(np.mean(closure))\n",
+        "\n",
+        "# calculate quartiles\n",
+        "\n",
+        "Q1 = np.percentile(closure, 25)\n",
+        "Q3 = np.percentile(closure, 75)\n",
+        "\n",
+        "IQR = Q3 - Q1\n",
+        "print(IQR)\n",
+        "\n",
+        "# calculate outlier boundaries\n",
+        "\n",
+        "lower_limit = Q1 - 1.5 * IQR\n",
+        "upper_limit = Q3 + 1.5 * IQR\n",
+        "\n",
+        "print(\"Lower Limit\", lower_limit)\n",
+        "print(\"Upper Limit\", upper_limit)\n",
+        "\n",
+        "# identify outliers\n",
+        "\n",
+        "Outliers = closure[(closure<lower_limit) | (closure>upper_limit)]  # (|) is an OR symbol\n",
+        "print(\"Outliers\", Outliers)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kgaBtR3-AFzv",
+        "outputId": "01348570-0370-41a0-e54f-95bec77aa35f"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "24.666666666666668\n",
+            "5.5\n",
+            "Lower Limit 4.0\n",
+            "Upper Limit 26.0\n",
+            "Outliers [80]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Statistical Distribution - Tells us about how values are distributed across dataset."
+      ],
+      "metadata": {
+        "id": "4Bfkz-pwNBfc"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Important statistics\n",
+        "1. Mean\n",
+        "2. Median\n",
+        "3. Standard Deviation"
+      ],
+      "metadata": {
+        "id": "n3q20FEzN75x"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "closure = [5, 6, 7, 8, 9, 10, 10, 11, 12, 30]\n",
+        "\n",
+        "closure_mean = np.mean(closure)\n",
+        "closure_median = np.median(closure)\n",
+        "closure_std = np.std(closure)\n",
+        "\n",
+        "print"
+      ],
+      "metadata": {
+        "id": "hhj0qhXjO5-V"
+      },
+      "execution_count": null,
+      "outputs": []
     }
   ]
 }
