@@ -1,0 +1,6867 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOeqZxjCG+aDrFfPBi/Okm1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/prajincoder01/Learning-Python/blob/main/Python%20for%20AI%20and%20ML\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "b5FoannyCM4K"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np, datetime\n",
+        "def grade(topic, task, got, expected, out_of=10):\n",
+        "    ok = np.allclose(got, expected)\n",
+        "    score = out_of if ok else 0\n",
+        "    print(\"✅ Correct\" if ok else \"❌ Not yet\", \"-\", task)\n",
+        "    print(f\"TRK|{topic}|{task}|{score}|{datetime.date.today()}\")\n",
+        "\n",
+        "# example:\n",
+        "# grade(\"numpy\", \"Reshape\", arr.reshape(2,3), [[1,2,3],[4,5,6]])"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "arr = np.array([1, 2, 3, 4, 5, 6])\n",
+        "answer = arr.reshape(2, 3)\n",
+        "\n",
+        "grade(\"numpy\", \"Reshaping\", answer, [[1, 2, 3], [4, 5, 6]])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dY2_N3KtdN5D",
+        "outputId": "06da095a-0c9a-478a-ae48-5a10442596d7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "✅ Correct - Reshaping\n",
+            "TRK|numpy|Reshaping|10|2026-10-31\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Hello I am expert an Ai Engineer\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gAnlsCcBck6l",
+        "outputId": "9458b440-4215-4362-8e0e-d07a51c58242"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello I am expert an Ai Engineer\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "name= \"Praj\"\n",
+        "age= 29\n",
+        "email= \"prajsalvi21@gmail.com\"\n",
+        "print(name)\n",
+        "print(age)\n",
+        "print(email)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PKnE9GocDEWX",
+        "outputId": "476a8713-b24f-45ff-9c1f-55988caf33ee"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Praj\n",
+            "29\n",
+            "prajsalvi21@gmail.com\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "email= \"prajsalvi21@gmail.com\"\n",
+        "print(email)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "o8X3GXznD8cn",
+        "outputId": "04c38a5d-0532-41cf-fe6f-cade276d2abe"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "prajsalvi21@gmail.com\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(type(25))\n",
+        "print(type(65.5))\n",
+        "print(type(\"hello\"))\n",
+        "print(type(True))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UW8zK74NER6e",
+        "outputId": "c1e7ca89-1ac8-4076-a48a-17ee0980dc42"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<class 'int'>\n",
+            "<class 'float'>\n",
+            "<class 'str'>\n",
+            "<class 'bool'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(10 + 3)    # addition → 13\n",
+        "print(10 - 3)    # subtraction → 7\n",
+        "print(10 * 3)    # multiplication → 30\n",
+        "print(10 / 3)    # division → 3.333...\n",
+        "print(10 // 3)   # whole-number division → 3\n",
+        "print(10 % 3)    # remainder → 1\n",
+        "print(10 ** 3)    # power → 1000"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QJxjegayLHu5",
+        "outputId": "1fe17235-4d7a-4a88-a692-664b6f558c6a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "13\n",
+            "7\n",
+            "30\n",
+            "3.3333333333333335\n",
+            "3\n",
+            "1\n",
+            "1000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(5 > 3)     # True\n",
+        "print(5 == 5)    # True  (two equals signs = \"is it equal?\") compares two things\n",
+        "print(5 != 5)    # False (not equal)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OWgfqt2_MMML",
+        "outputId": "967a2f67-f940-4661-89cf-e90fb1c344d8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n",
+            "True\n",
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "name = input(\"What is your name? \")\n",
+        "print(\"Nice to meet you,\", name)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gWe6NSylN0Aa",
+        "outputId": "3cb18c1b-1aed-48a9-ef4c-96ef9b85e253"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "What is your name? NPA\n",
+            "Nice to meet you, NPA\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "age = input(\"what is your age?\")\n",
+        "print( \"You look quiet young for\" age)"
+      ],
+      "metadata": {
+        "id": "QBZHLFlcPQV0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "age = input(\"what is your age?\")\n",
+        "print( \"You look quiet young for\", age)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YzORfD6KdwUM",
+        "outputId": "a47cb265-75e6-45ac-a542-905ac1ae3252"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "what is your age?29\n",
+            "You look quiet young for 29\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "age = 34\n",
+        "print (\"My am age years old.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ub6f7nJG9m6K",
+        "outputId": "c74990ff-3dda-478d-876a-5c40fdff538d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "My am age years old.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "age = 34\n",
+        "print(f\"I am {age } years old.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wn6AvfxW-bpp",
+        "outputId": "e5c46af1-1a6e-44af-e123-ec015a639244"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I am 34 years old.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "age = 34\n",
+        "print(\"I am {age} years old.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7Mms7cJQ-0ma",
+        "outputId": "be4cb8be-9e56-4b6b-c592-b4d65d888d9a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I am {age} years old.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "weight = float(input(\"Enter weight in kg: \"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PUJ6DdqQA7vP",
+        "outputId": "67b4153f-8309-4908-b7e6-e5ecfe4aed21"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Enter weight in kg: 42.5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Name = print(f\"What is your Name?\")\n",
+        "City = print(f\"Which is your favourite City?\")\n",
+        "Food = print(f\"What is your favourite Food?\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8dAcHD47DpQU",
+        "outputId": "b6f080fb-9227-4a1b-df2e-ff69f04dfee4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "What is your Name?\n",
+            "Which is your favourite City?\n",
+            "What is your favourite Food?\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Name = \"Praj\"\n",
+        "Name = print(f\"{Name}\")\n",
+        "City = \"Edinburgh\"\n",
+        "City = print(f\"{City}\")\n",
+        "Food = \"Pizza\"\n",
+        "Food = print(f\"{Food}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2t7MX127EaSN",
+        "outputId": "711a5489-0f32-483c-a560-b8dd0237b937"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Praj\n",
+            "Edinburgh\n",
+            "Pizza\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "name = input (\"what is your name?\")\n",
+        "print(\"My name is\",name)\n",
+        "city = input(\"which is your favourite city?\")\n",
+        "print(\"My favourite city is\",city)\n",
+        "food = input(\"what is your favourite food?\")\n",
+        "print(\"My favourite food is\", food)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Q26jvXZPGM9r",
+        "outputId": "00290116-8d57-489d-8b7c-f91ebce25ed4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "what is your name?Praj\n",
+            "My name is Praj\n",
+            "which is your favourite city?|Edinburgh\n",
+            "My favourite city is |Edinburgh\n",
+            "what is your favourite food?Pizza\n",
+            "My favourite food is Pizza\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "status = input(\"what are you?\")\n",
+        "print(\"I am a\", status)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ue8mgFrOJoY-",
+        "outputId": "cf90335e-ecbe-422d-9502-b537431ec5d8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "what are you?Billionaire\n",
+            "I am a Billionaire\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "name = \"Praj\"\n",
+        "print(f\"My name is {name}\")\n",
+        "City = \"Edinburgh\"\n",
+        "print(f\"My favourite city is {City}\")\n",
+        "Food = \"Pizza\"\n",
+        "print(f\"My favourite food is {Food}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2gWprZ2JGMCL",
+        "outputId": "7b7808d2-fb15-4763-ed9d-c470413a046c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "My name is Praj\n",
+            "My favourite city is Edinburgh\n",
+            "My favourite food is Pizza\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = 7\n",
+        "b = 3\n",
+        "print(a+b)\n",
+        "print(a-b)\n",
+        "print(a*b)\n",
+        "print(a/b)\n",
+        "print(a//b)\n",
+        "print(a**b)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K8Qz0ciAJmED",
+        "outputId": "8cffb979-deb8-4a3d-d49d-9a0abe6a38f3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n",
+            "4\n",
+            "21\n",
+            "2.3333333333333335\n",
+            "2\n",
+            "343\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "paneer_tikka_masala = 10\n",
+        "naan = 2\n",
+        "veg_manchurian = 23\n",
+        "fried_rice = 43\n",
+        "\n",
+        "Total = paneer_tikka_masala + naan + veg_manchurian + fried_rice\n",
+        "print(Total)\n",
+        "\n",
+        "tip = Total * 0.10\n",
+        "print(f\"10% of the total is: {tip}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "w1JEfoWgKKr2",
+        "outputId": "18524462-0717-41be-eee3-37f5e5567c2b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "78\n",
+            "10% of the total is: 7.800000000000001\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from IPython.core.interactiveshell import InteractiveShell\n",
+        "weight = 76  # in kg\n",
+        "height = 1.65  # in meters (for a standard BMI calculation)\n",
+        "bmi = weight / (height * height)\n",
+        "print(f\"Your BMI is: {bmi:.2f}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "V7waD1gYS_W6",
+        "outputId": "1e94cdb0-e9bc-4cd2-8a5e-d8e87f188566"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Your BMI is: 27.92\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "temperature = 38.5\n",
+        "\n",
+        "if temperature > 38:\n",
+        "    print(\"You have a fever.\")\n",
+        "elif temperature >= 36:\n",
+        "    print(\"Normal temperature.\")\n",
+        "else:\n",
+        "    print(\"Low temperature.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iQQP9ywBhjOY",
+        "outputId": "2906f566-3bcc-4990-b174-c12588ef0c0c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "You have a fever.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "age = 20\n",
+        "has_id = True\n",
+        "\n",
+        "if age >= 18 and has_id:\n",
+        "    print(\"Entry allowed.\")\n"
+      ],
+      "metadata": {
+        "id": "S1uCQBNqwZWA"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "range(1, 6)      # 1, 2, 3, 4, 5\n",
+        "range(0, 10, 2)  # 0, 2, 4, 6, 8  (steps of 2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "e4kRhU0MDdSD",
+        "outputId": "6bf3a8ec-1bc5-419f-b83a-18827cd1064b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "range(0, 10, 2)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(5):\n",
+        "    print(\"Round\", i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XnggUT2yBH5T",
+        "outputId": "184d2b0b-a6d4-4bcc-833e-6c577a1870fa"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Round 0\n",
+            "Round 1\n",
+            "Round 2\n",
+            "Round 3\n",
+            "Round 4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "count = 3\n",
+        "while count > 0:\n",
+        "    print(count)\n",
+        "    count = count - 1\n",
+        "print(\"Liftoff!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qmQW_INCC5Cd",
+        "outputId": "32719365-0bf5-4f98-eb9a-fda93cb388cb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3\n",
+            "2\n",
+            "1\n",
+            "Liftoff!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(10):\n",
+        "    if i == 3:\n",
+        "        continue   # skip this round, go to the next\n",
+        "    if i == 6:\n",
+        "        break      # stop the loop completely\n",
+        "    print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JaOJXipfEl6O",
+        "outputId": "4c2ef6d8-aa8f-4b8a-c3fd-f3ad339b728d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "1\n",
+            "2\n",
+            "4\n",
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "score = 96\n",
+        "\n",
+        "if score >= 75:\n",
+        "    print(\"Distinction\")\n",
+        "elif score >= 40 and score <= 74:\n",
+        "    print(\"Pass\")\n",
+        "else:\n",
+        "    print(\"fail\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ypqTTy8AG_1k",
+        "outputId": "2b4b7c9a-4310-489b-a911-5ec24103a140"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Distinction\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "correct_number = 6\n",
+        "sn = int(input(\"Pick a number(1-10): \"))\n",
+        "\n",
+        "if sn < correct_number:\n",
+        "    print(\"Too Low\")\n",
+        "elif sn > correct_number:\n",
+        "    print(\"Too High\")\n",
+        "else:\n",
+        "    print(\"Correct\")"
+      ],
+      "metadata": {
+        "id": "ZL28gEef10Kh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "score = float(input(\"Whats your score (0-100)?\"))\n",
+        "\n",
+        "if score >= 75:\n",
+        "    print(\"Distinction\")\n",
+        "elif score >= 40 and score <= 74:\n",
+        "    print(\"Pass\")\n",
+        "else:\n",
+        "    print(\"fail\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "H3SVGj1FjFtc",
+        "outputId": "74307dce-9f37-460e-bab2-3335959faa03"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Whats your score (0-100)?96\n",
+            "Distinction\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "secret = 7\n",
+        "\n",
+        "guess = int(input(\"Guess the number: \"))\n",
+        "\n",
+        "while guess != secret:\n",
+        "    if guess > secret:\n",
+        "        print(\"Too high!\")\n",
+        "    else:\n",
+        "        print(\"Too low!\")\n",
+        "    guess = int(input(\"Try again: \"))\n",
+        "\n",
+        "print(\"Correct! You got it!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "p0BypvgY7oAL",
+        "outputId": "72b99c73-ac75-493e-9553-d7cbca3ff62a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Guess the number: 1\n",
+            "Too low!\n",
+            "Try again: 4\n",
+            "Too low!\n",
+            "Try again: 1\n",
+            "Too low!\n",
+            "Try again: 7\n",
+            "Correct! You got it!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "len(password) == 8\n",
+        "password = int(input(\"Type a password:\"))\n",
+        "while len(password) == password:\n",
+        "  if password < 8:\n",
+        "    print(\"Too short\")\n",
+        "    elif password > 8:\n",
+        "      print(\"Accept Password\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 109
+        },
+        "id": "C5Gheb6WfgJq",
+        "outputId": "9bdd3394-adb1-4c90-d9d7-315e3ec85756"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (1076169671.py, line 6)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_3714/1076169671.py\"\u001b[0;36m, line \u001b[0;32m6\u001b[0m\n\u001b[0;31m    elif password > 8:\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "password = input(\"Type a password: \")\n",
+        "\n",
+        "while len(password) < 8:\n",
+        "    print(\"Too short\")\n",
+        "    password = input(\"Try again: \")\n",
+        "\n",
+        "print(\"Password accepted\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2SZ7F39phNwj",
+        "outputId": "6056aa85-3096-472a-d446-e679d6cb4b75"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Type a password: 123456\n",
+            "Too short\n",
+            "Try again: 12345678\n",
+            "Password accepted\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "message = \"Hello\"\n",
+        "print(len(message))  # 5\n",
+        "\n",
+        "empty = \"\"\n",
+        "print(len(empty))    # 0"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mXUEoWD5MdBw",
+        "outputId": "4b0adf76-fd7e-4815-b058-fac7d93c31f3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n",
+            "0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "age = 25\n",
+        "message = \"I am \" + str(age) + \" years old\"\n",
+        "print(message)  # I am 25 years old\n",
+        "\n",
+        "# Or use f-strings (we'll learn more later)\n",
+        "message = f\"I am {age} years old\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cGegjb9fMv8Y",
+        "outputId": "6efa3cc3-548c-4a2f-ef4e-17fbc512b92f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I am 25 years old\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "day = \"Saturday\"\n",
+        "is_weekend = day == \"Saturday\" or day == \"Sunday\"\n",
+        "print(is_weekend)  # True"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3gsqLhTjTNk7",
+        "outputId": "db4877b9-ed9e-4665-85d8-310699b84718"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "IMPORTANT == CODE"
+      ],
+      "metadata": {
+        "id": "2TL3c9y3TWSQ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "LOOPS\n"
+      ],
+      "metadata": {
+        "id": "WXiaJIjAsf92"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FOR LOOP IN RANGE"
+      ],
+      "metadata": {
+        "id": "s6PJSKiWuz_4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(6):\n",
+        "    print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4JZ20hDpslMv",
+        "outputId": "9311689e-a983-43cd-8ad5-6074c95b2be0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(6):\n",
+        "    print(\"i\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BTW8yFjFtE02",
+        "outputId": "f3e72730-f8c0-496c-fa1d-074b5aebcfb9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "i\n",
+            "i\n",
+            "i\n",
+            "i\n",
+            "i\n",
+            "i\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(2,9):\n",
+        "    print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MetBkyQ9u9Lm",
+        "outputId": "4a4750b3-8ff0-442f-fb19-f46f1bd7b4e9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n",
+            "8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "LOOPS THROUGH STEPS"
+      ],
+      "metadata": {
+        "id": "ZhgUnuw5vNLN"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(0,20,4):\n",
+        "    print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ihFFlHg2tImB",
+        "outputId": "db7b8553-36a7-4236-f962-8458a9343896"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "4\n",
+            "8\n",
+            "12\n",
+            "16\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FOR LOOPS THROUGH LIST"
+      ],
+      "metadata": {
+        "id": "TxFRtBpbtdKR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "fruits = [\"mango, apple, orange\"]\n",
+        "for fruit in fruits:\n",
+        "    print(fruit)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NA3cPFdktieA",
+        "outputId": "a2f8aaf9-5d13-48c5-970c-334adb83603f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "mango, apple, orange\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "fruits = [\"apple\", \"banana\", \"mango\"]\n",
+        "\n",
+        "for fruit in fruits:\n",
+        "    print(fruit)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Md1vakGxvmGS",
+        "outputId": "0004d582-f4b0-4951-f676-24d0d6f8e46c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "apple\n",
+            "banana\n",
+            "mango\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "LOOP THROUGH STRINGS"
+      ],
+      "metadata": {
+        "id": "zvHOJUecuHmk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for letters in \"Python\":\n",
+        "  print(letters)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9ohaBX3wuLvD",
+        "outputId": "0d6d0ef2-9240-4957-8b83-cb5c011acfac"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "P\n",
+            "y\n",
+            "t\n",
+            "h\n",
+            "o\n",
+            "n\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "LOOP THROUGH A TUPLE ("
+      ],
+      "metadata": {
+        "id": "ciJ21TZ5wssn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "colors = (\"red\", \"cyan\", \"black\")\n",
+        "for color in colors:\n",
+        "    print(color)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "t0X2i9EbwuyF",
+        "outputId": "191d5b1d-1d4a-4695-f69c-3afa952bd248"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "red\n",
+            "cyan\n",
+            "black\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\"FOR\" LOOP WITH DICTIONARY {curly bracket}"
+      ],
+      "metadata": {
+        "id": "mN0pyiVlCSuv"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "student = {\"name\": \"Alex\", \"age\": 21}\n",
+        "\n",
+        "for key, value in student.items():\n",
+        "    print(key, value)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LOctdsmTCeso",
+        "outputId": "3a237078-bd01-4038-f3f9-11948f241b5f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "name Alex\n",
+            "age 21\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "weather = {\"Temperature\": \"Hot\", \"Forecast\": \"Rainy\"}\n",
+        "for key, value in weather.items():\n",
+        "    print(key, value)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cCUxaT4dIgoK",
+        "outputId": "59df3395-2c16-4c25-929d-5eceb5340b46"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Temperature Hot\n",
+            "Forecast Rainy\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FOR LOOPS WITH ENUMERATE (ASSIGNS INDEX TO THE LIST)"
+      ],
+      "metadata": {
+        "id": "62jdHWx2j4Kf"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "fruits = [\"apple\", \"banana\", \"mango\"]\n",
+        "\n",
+        "for index, fruit in enumerate(fruits):\n",
+        "    print(index, fruit)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nFHOrwntiepa",
+        "outputId": "887b927c-bf93-4509-a2a6-9dc431af7a76"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 apple\n",
+            "1 banana\n",
+            "2 mango\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "colors = [\"cyan\", \"black\", \"Red\"]\n",
+        "for index, color in enumerate(colors):\n",
+        "  print(index, color)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "d9VA2gOtlAz3",
+        "outputId": "3440fbee-f84e-4dd2-c5c8-9c2d7ca6917a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 cyan\n",
+            "1 black\n",
+            "2 Red\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FOR LOOP THROUGH ZIP (TAKES TWO PARALEL LISTS AND PAIRS THEM"
+      ],
+      "metadata": {
+        "id": "uaq8gjosln_X"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "names = [\"Alex\", \"Sam\"]\n",
+        "scores = [85, 92]\n",
+        "\n",
+        "for name, score in zip(names, scores):       # Takes two parellel lists and pairs it\n",
+        "    print(name, score)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4x_LA2c0ltxd",
+        "outputId": "c2d6dde8-6e1d-4050-cc65-393e3dc60e03"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alex 85\n",
+            "Sam 92\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "WHILE LOOP (REPEATS CODE UNTIL AS LONG AS CONDITION IS TRUE"
+      ],
+      "metadata": {
+        "id": "is2iO604pgQZ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "count = 2\n",
+        "while count <=12:\n",
+        "  print(count)\n",
+        "  count +=3                #count after 3\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uo2LunmupfAl",
+        "outputId": "267ee504-ce8f-40af-c3f6-9f1ceff1f35a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "5\n",
+            "8\n",
+            "11\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "COUNTER CONTROLLED LOOP"
+      ],
+      "metadata": {
+        "id": "iKUD20UFtnFx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "i = 2\n",
+        "while i <=7:\n",
+        "    print(i)\n",
+        "    i +=1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "F8XU3s86tqzt",
+        "outputId": "6857343f-800e-4998-c9ce-916643cdcf10"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "CONDITION CONTROLED LOOP"
+      ],
+      "metadata": {
+        "id": "uZDspn4YxJYl"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "password = \" \"\n",
+        "while password != \"Harshita\":\n",
+        "    password = input(\"Enter password:\")\n",
+        "print(\"Access Granted\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tsY3J3xexBmb",
+        "outputId": "c0a7bb81-99f4-4fc5-eab4-e6b2daeadf65"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter password:Jaan\n",
+            "Enter password:Harshita\n",
+            "Access Granted\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "INFINITE LOOP\n"
+      ],
+      "metadata": {
+        "id": "B5c43kRmvM32"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "while True:\n",
+        "    command = input(\"Enter 'q' to quit: \")\n",
+        "\n",
+        "    if command == \"q\":\n",
+        "        break"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yqObtFdWz2Qb",
+        "outputId": "b6289121-28a6-458b-e4a4-a206dd723ee4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Enter 'q' to quit: d\n",
+            "Enter 'q' to quit: f\n",
+            "Enter 'q' to quit: q\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "NESTED LOOP for loop"
+      ],
+      "metadata": {
+        "id": "3y_Oy9YxuBc7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(2,17):\n",
+        "    for r in range(1,13):\n",
+        "        print(i,r)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SW1GuZoFuDkt",
+        "outputId": "f8a69e96-2bee-4ef7-f431-7e29d96f7b44"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2 1\n",
+            "2 2\n",
+            "2 3\n",
+            "2 4\n",
+            "2 5\n",
+            "2 6\n",
+            "2 7\n",
+            "2 8\n",
+            "2 9\n",
+            "2 10\n",
+            "2 11\n",
+            "2 12\n",
+            "3 1\n",
+            "3 2\n",
+            "3 3\n",
+            "3 4\n",
+            "3 5\n",
+            "3 6\n",
+            "3 7\n",
+            "3 8\n",
+            "3 9\n",
+            "3 10\n",
+            "3 11\n",
+            "3 12\n",
+            "4 1\n",
+            "4 2\n",
+            "4 3\n",
+            "4 4\n",
+            "4 5\n",
+            "4 6\n",
+            "4 7\n",
+            "4 8\n",
+            "4 9\n",
+            "4 10\n",
+            "4 11\n",
+            "4 12\n",
+            "5 1\n",
+            "5 2\n",
+            "5 3\n",
+            "5 4\n",
+            "5 5\n",
+            "5 6\n",
+            "5 7\n",
+            "5 8\n",
+            "5 9\n",
+            "5 10\n",
+            "5 11\n",
+            "5 12\n",
+            "6 1\n",
+            "6 2\n",
+            "6 3\n",
+            "6 4\n",
+            "6 5\n",
+            "6 6\n",
+            "6 7\n",
+            "6 8\n",
+            "6 9\n",
+            "6 10\n",
+            "6 11\n",
+            "6 12\n",
+            "7 1\n",
+            "7 2\n",
+            "7 3\n",
+            "7 4\n",
+            "7 5\n",
+            "7 6\n",
+            "7 7\n",
+            "7 8\n",
+            "7 9\n",
+            "7 10\n",
+            "7 11\n",
+            "7 12\n",
+            "8 1\n",
+            "8 2\n",
+            "8 3\n",
+            "8 4\n",
+            "8 5\n",
+            "8 6\n",
+            "8 7\n",
+            "8 8\n",
+            "8 9\n",
+            "8 10\n",
+            "8 11\n",
+            "8 12\n",
+            "9 1\n",
+            "9 2\n",
+            "9 3\n",
+            "9 4\n",
+            "9 5\n",
+            "9 6\n",
+            "9 7\n",
+            "9 8\n",
+            "9 9\n",
+            "9 10\n",
+            "9 11\n",
+            "9 12\n",
+            "10 1\n",
+            "10 2\n",
+            "10 3\n",
+            "10 4\n",
+            "10 5\n",
+            "10 6\n",
+            "10 7\n",
+            "10 8\n",
+            "10 9\n",
+            "10 10\n",
+            "10 11\n",
+            "10 12\n",
+            "11 1\n",
+            "11 2\n",
+            "11 3\n",
+            "11 4\n",
+            "11 5\n",
+            "11 6\n",
+            "11 7\n",
+            "11 8\n",
+            "11 9\n",
+            "11 10\n",
+            "11 11\n",
+            "11 12\n",
+            "12 1\n",
+            "12 2\n",
+            "12 3\n",
+            "12 4\n",
+            "12 5\n",
+            "12 6\n",
+            "12 7\n",
+            "12 8\n",
+            "12 9\n",
+            "12 10\n",
+            "12 11\n",
+            "12 12\n",
+            "13 1\n",
+            "13 2\n",
+            "13 3\n",
+            "13 4\n",
+            "13 5\n",
+            "13 6\n",
+            "13 7\n",
+            "13 8\n",
+            "13 9\n",
+            "13 10\n",
+            "13 11\n",
+            "13 12\n",
+            "14 1\n",
+            "14 2\n",
+            "14 3\n",
+            "14 4\n",
+            "14 5\n",
+            "14 6\n",
+            "14 7\n",
+            "14 8\n",
+            "14 9\n",
+            "14 10\n",
+            "14 11\n",
+            "14 12\n",
+            "15 1\n",
+            "15 2\n",
+            "15 3\n",
+            "15 4\n",
+            "15 5\n",
+            "15 6\n",
+            "15 7\n",
+            "15 8\n",
+            "15 9\n",
+            "15 10\n",
+            "15 11\n",
+            "15 12\n",
+            "16 1\n",
+            "16 2\n",
+            "16 3\n",
+            "16 4\n",
+            "16 5\n",
+            "16 6\n",
+            "16 7\n",
+            "16 8\n",
+            "16 9\n",
+            "16 10\n",
+            "16 11\n",
+            "16 12\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "NESTED WHILE LOOP"
+      ],
+      "metadata": {
+        "id": "zIPpMuNvyrFi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "i = 2\n",
+        "while i <=6:\n",
+        "    j = 1\n",
+        "    while j <= 12:\n",
+        "            print(i,j)\n",
+        "            j +=1\n",
+        "            i +=1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dDfeUF8MyxQJ",
+        "outputId": "6609d642-d9ba-45a7-cc36-32fc73febb17"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2 1\n",
+            "3 2\n",
+            "4 3\n",
+            "5 4\n",
+            "6 5\n",
+            "7 6\n",
+            "8 7\n",
+            "9 8\n",
+            "10 9\n",
+            "11 10\n",
+            "12 11\n",
+            "13 12\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "LOOP CONTROL STATEMENTS"
+      ],
+      "metadata": {
+        "id": "dSmLoHAU1K3m"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(8):\n",
+        "    while i == 5:\n",
+        "       break\n",
+        "    print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "s3Hp9sfh1OJf",
+        "outputId": "7cabcf6c-0e42-4d57-f361-ec2a4ba61f7d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "CONTINUE - SKIP THE CURRENT SITUATION"
+      ],
+      "metadata": {
+        "id": "BjLnsWsZ2V44"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(5):\n",
+        "    if i == 1:\n",
+        "        continue\n",
+        "    print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kaLBWXyn4ZKp",
+        "outputId": "137712ed-f4ee-4878-d1d0-73ee9cfbd5fb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "2\n",
+            "3\n",
+            "4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "PASS (DO NOTHING FOR NOW)"
+      ],
+      "metadata": {
+        "id": "Jbc6Atdq5W1b"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(7):\n",
+        "    pass"
+      ],
+      "metadata": {
+        "id": "Q3E_wGYl5Zmn"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(5):\n",
+        "    pass"
+      ],
+      "metadata": {
+        "id": "9aFsRT3W5otE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ELSE CLAUSE IN A LOOP"
+      ],
+      "metadata": {
+        "id": "6uX10a96AX0J"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "count = 2\n",
+        "while count <=8:\n",
+        "    print(count)\n",
+        "    count +=2\n",
+        "else:\n",
+        "    print(\"Count Complete\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xJZYqk8GAajN",
+        "outputId": "c334b64f-d700-477f-b224-6e88ee999dce"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "4\n",
+            "6\n",
+            "8\n",
+            "Count Complete\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "LIST COMPREHENSIONS"
+      ],
+      "metadata": {
+        "id": "vkUAj7DcCvWT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "squares = [x**3 for x in range(1,4)]\n",
+        "print(squares)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pKJexbqjCy4F",
+        "outputId": "d19ea6da-4cf4-41e7-e56a-81161696f377"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 8, 27]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "squares = [x**2 for x in range(1, 6)]\n",
+        "\n",
+        "print(squares)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CR5U_0PBDLcl",
+        "outputId": "226504e5-076a-4d32-a3ee-e73c4e45ca9c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 4, 9, 16, 25]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ADD CONDITION"
+      ],
+      "metadata": {
+        "id": "CX09_YTgDbKX"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "even_numbers = [x for x in range(6) if x % 2 == 0]\n",
+        "print(even_numbers)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7ovbCqFtDdnX",
+        "outputId": "5abb7259-586b-46b3-f1be-ed0c524e9152"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0, 2, 4]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FUNCTIONS"
+      ],
+      "metadata": {
+        "id": "Kh7LWwiI7Ad7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def greet():\n",
+        "  print(\"Hi Prajakta, You are on board!\")\n",
+        "greet()\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7RvKDPeV7OP2",
+        "outputId": "6f053c13-d80e-470b-9a5b-64cd5a2a1527"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hi Prajakta, You are on board!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def greet():                      #Function is defined as def in python\n",
+        "  print(\"Welcome on board!\")\n",
+        "greet()                           # You can call a Function multiple times\n",
+        "greet()                           # You can call a Function multiple times\n",
+        "greet()                           # You can call a Function multiple times\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "J9RhodW07qDz",
+        "outputId": "407f63a5-5106-406d-d732-b15b7d65c60c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Welcome on board!\n",
+            "Welcome on board!\n",
+            "Welcome on board!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FUNCTION WITH PARAMETERS"
+      ],
+      "metadata": {
+        "id": "32LWm2Ma8Awy"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def greet(name):           #name =parameter\n",
+        "    print(\"Hello\", name)\n",
+        "greet(\"NI\")                #NI = argument\n",
+        "greet(\"NPA\")               #NPA = argument"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xly8v43t8GYc",
+        "outputId": "e1c80ce5-c298-435a-cbd9-5bae12ec6126"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello NI\n",
+            "Hello NPA\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FUNCTION WITH MULTIPLE PARAMETERS"
+      ],
+      "metadata": {
+        "id": "g_dwvKwcA-Aq"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def introduction(name, age):\n",
+        "    print(\"My name is\", name)\n",
+        "    print(\"I am\", age, \"years old\")\n",
+        "introduction(\"Praj\", 29)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2RRmJNBIBD3E",
+        "outputId": "17155ffc-a950-40b2-af57-8be60f181099"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "My name is Praj\n",
+            "I am 29 years old\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "RETURN STATEMENT (Users can either display result as \"PRINT\" or AS \"RETURN\")"
+      ],
+      "metadata": {
+        "id": "GXw2mHvjDsh1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def add(a,b):\n",
+        "  print(a+b)      #This example using a print statement\n",
+        "add(1, 5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0hHGtD3EEX6Y",
+        "outputId": "a9403d07-b042-473d-88b2-5778898aa1b1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "RETURN"
+      ],
+      "metadata": {
+        "id": "JgbGuXwgFRYa"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def add(a,b):\n",
+        "    return(a+b)      #This example is using return statement\n",
+        "result = (add(1,5))\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9KtrPHnYFyyU",
+        "outputId": "e9194627-9bd2-4c11-8f72-b00fb34f0446"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def add(h,p):\n",
+        "  return(h+p)\n",
+        "answer = (add(3,7))\n",
+        "final_answer = answer* 7       #The difference becomes clear when you want to use the result in another calculation.\n",
+        "print(final_answer)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ksh96GoUG2mo",
+        "outputId": "4b116c5f-5ad2-4443-a41b-ba24573fa811"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "70\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "TYPES OF FUNCTION ARGUMENTS\n"
+      ],
+      "metadata": {
+        "id": "iQ1cpA5_Hhkd"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. POSITIONAL ARGUMENTS: Arguments assigned according to their positions"
+      ],
+      "metadata": {
+        "id": "Ph_DK1zRMvWq"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def subtract(h,p):      #First argument is h and 2nd is p\n",
+        "    return(h-p)\n",
+        "\n",
+        "print(subtract(1,3))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ghiez0u_HlrD",
+        "outputId": "f2e07a35-b43b-47b8-a185-25f3b60f232f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "KEYWORDS ARGUMENTS (Explicitly specify parameter name)"
+      ],
+      "metadata": {
+        "id": "52SO-Uxeo0AU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def introduce(name, age):\n",
+        "    print(name, age)\n",
+        "introduce(name = \"Prajakta\", age = 29)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "p8qwvb2Ro28r",
+        "outputId": "13d81878-3bb1-4b30-92a4-ddd5c86d5bc2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Prajakta 29\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "DEFAULT ARGUMENTS (Paramaters can have a defualt value)"
+      ],
+      "metadata": {
+        "id": "n5b3Hr1zs7-3"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def greet(name = \"Guest!\"):\n",
+        "  print(\"Hello\", name)\n",
+        "greet()\n",
+        "greet(\"NI!\")                      #if you don't supply name python uses Guest\n",
+        "greet(\"NPA!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "39zFbghOttfD",
+        "outputId": "36ad7193-a526-4d2f-d131-1b2b87c59cba"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello Guest!\n",
+            "Hello NI!\n",
+            "Hello NPA!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ARBITRARY POSITIONAL ARGUMENTS (args)\n",
+        "Use *args when you want to accept a variable number of positional arguments."
+      ],
+      "metadata": {
+        "id": "Iu92Z7qiujd1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def add_numbers(*numbers):    # \"*\" represents (*args) Tells python to accept all arguments user passes\n",
+        "  return sum(numbers)\n",
+        "print (add_numbers(1,3))\n",
+        "print (add_numbers(2,3,4,2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nF5GXCLvtuYz",
+        "outputId": "87cf2b1c-cf3e-4606-e109-ac6aab0b12e2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "4\n",
+            "11\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ARBITRARY KEYWORDS ARGUMENTS(**kwargs) Used to accept variable number of \"keyword\" arguments"
+      ],
+      "metadata": {
+        "id": "4dhG7dn9zyqb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def show_details(**details):\n",
+        "  print(details)\n",
+        "show_details (name = \"Praj\", age = 29, city = \"Dundee\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cA3yIE5o0FLW",
+        "outputId": "24fba573-7852-4079-f2aa-82f5d8a85c84"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'Praj', 'age': 29, 'city': 'Dundee'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FUNCTIONS WITH CONDITIONS AND LOOPS (if, for and while)"
+      ],
+      "metadata": {
+        "id": "5IgNZJr67qS0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def check_number(number):\n",
+        "    if number % 2 == 0:\n",
+        "        return \"Even\"\n",
+        "    else:\n",
+        "        return \"Odd\"\n",
+        "print (check_number(8))\n",
+        "print (check_number(4))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OKctoJah_54g",
+        "outputId": "dd2f28ed-fe04-4809-ef96-d8ea34da4c33"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Even\n",
+            "Even\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Use Loop inside a Function"
+      ],
+      "metadata": {
+        "id": "Zgog3umKKym7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def number(n):\n",
+        "  for i in range (1, n+3):\n",
+        "    print(i)\n",
+        "number(3)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aP_muXDhKx0F",
+        "outputId": "d3fbbce2-d2a4-45a7-c8fa-7d47ed626fa3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Call a function from another Function"
+      ],
+      "metadata": {
+        "id": "n3eo6BAXLxQM"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def square(number):\n",
+        "  return number ** 2\n",
+        "def sum_of_squares (h,p):\n",
+        "  return square(h) + square(p)   #sum_of_square() function uses square function()\n",
+        "print(sum_of_squares(2,3))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UMc-PnbjNbSH",
+        "outputId": "b7b7faab-d34a-46f8-eaa2-2000b879ff68"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "13\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Local & Global variables\n",
+        "A variable created inside a function is ususally local to that function.\n"
+      ],
+      "metadata": {
+        "id": "GgEdqdyeQQ2z"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def calculate():\n",
+        "  result = 100\n",
+        "  print(result)\n",
+        "calculate()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XwU1ztSdQh1n",
+        "outputId": "ada10ae4-8f16-4a75-846f-464b23fe0153"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "100\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Trying to acess variable (result) outside a fucntion could give a name error"
+      ],
+      "metadata": {
+        "id": "9NIX0IAJg4fu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def calculate():\n",
+        "  result = 30\n",
+        "calculate()\n",
+        "print(result)     #name error"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 180
+        },
+        "id": "oAd74eCjhvVE",
+        "outputId": "2056832d-4288-41c0-825e-aea11e8d9721"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "name 'result' is not defined",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_1022/2606998736.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      2\u001b[0m   \u001b[0mresult\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;36m30\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0mcalculate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mresult\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m: name 'result' is not defined"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "A Global variable defined outside a function can be read inside the"
+      ],
+      "metadata": {
+        "id": "EIhmj_g5iLiO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "name = \"Praj\"\n",
+        "def greet():\n",
+        "    print(\"Hello\", name)\n",
+        "greet()\n"
+      ],
+      "metadata": {
+        "id": "wKT4sxn671X5"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Lamda Function - Is a anonymous function written as a single expression."
+      ],
+      "metadata": {
+        "id": "s0xRtDEflbEP"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Regular Function"
+      ],
+      "metadata": {
+        "id": "x9mxyfksoRYa"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def square(x):\n",
+        "  return x * x"
+      ],
+      "metadata": {
+        "id": "RA-2prKh6JEK"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Equivalent LAMbDA"
+      ],
+      "metadata": {
+        "id": "WiFNqIciuNtG"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "square = lambda x: x * x\n",
+        "\n",
+        "print(square(5))"
+      ],
+      "metadata": {
+        "id": "38ywImwZ7hmA"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "LAMDAS ARE OFTEN USEFUL FOR SHORT OPERATIONS SUCH AS SORTING"
+      ],
+      "metadata": {
+        "id": "uW22VoiA3RFZ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "student = [(\"Alex\", 73), (\"Praj\", 98), (\"Liam\", 84)]\n",
+        "# Sort by the score (which is at index 1 of each tuple)\n",
+        "student.sort(key = lambda x: x[1])\n",
+        "print(student)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DjuzcLhIEBmc",
+        "outputId": "d5803cac-05cb-4c97-dfa1-e43b7f871b60"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[('Alex', 73), ('Liam', 84), ('Praj', 98)]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [1, 2, 3, 4, 5, 6]\n",
+        "for n in nums[:]:\n",
+        "  if n % 2 == 0:\n",
+        "      nums.remove(n)             #REMOVES n%2 == 0 numbers\n",
+        "print(nums)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Rz_t5Sz8ESrh",
+        "outputId": "7e8ad403-8e1d-40a0-888f-a86866d47939"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 3, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Recursive Function - A function that calls itself"
+      ],
+      "metadata": {
+        "id": "Nod8Tz19IHNJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def factorial(n):\n",
+        "    if n <=1:\n",
+        "        return 1\n",
+        "    return n * factorial(n-1)\n",
+        "print(factorial(5))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cLvH2zzIIQ6E",
+        "outputId": "6bc8a3c8-b6d2-4b18-9557-49dd7fadbdbd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "120\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Lists"
+      ],
+      "metadata": {
+        "id": "u9QFtp2mP_4J"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. Append"
+      ],
+      "metadata": {
+        "id": "toXSwGRn7rbi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [1,2,3,4,5]\n",
+        "nums.append(6)            #append(6) at the end\n",
+        "print(nums)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BZvpT3En7tdw",
+        "outputId": "4b3720e2-d438-44eb-bee9-b3dd548a4aa0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 5, 6]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. Extend"
+      ],
+      "metadata": {
+        "id": "J6UOTMfG8aiC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [1,2,3,4]\n",
+        "nums.extend([5,6,7])     #Extends the list at the end\n",
+        "print(nums)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zHMwAG4e8m4c",
+        "outputId": "9bf8422b-b28c-4700-a1ef-3e9ef90a793e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 5, 6, 7]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Insert"
+      ],
+      "metadata": {
+        "id": "1uHjCQAD88v8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [1,3,5,7]\n",
+        "nums.insert(0,4)   #insert the element at specific positions i.e places 4 at position 1\n",
+        "print(nums)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hWAm3ix39FHb",
+        "outputId": "ffc35988-62de-44b0-f67c-8355246c531d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[4, 1, 3, 5, 7]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Remove"
+      ],
+      "metadata": {
+        "id": "ilhDvwNp-U9p"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [1,3,2,4,5]\n",
+        "nums.remove(1)           #Removes element on position\n",
+        "print(nums)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SkpUzpFQ-Yxm",
+        "outputId": "ddb666cc-3227-4cb1-d4b2-b42e362767c2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[3, 2, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. Pop"
+      ],
+      "metadata": {
+        "id": "zcBZWQhc-_eE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [1,2,3]\n",
+        "nums.pop(1)        #pops elements by index (default = last) num.pop()\n",
+        "print(nums)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SfhufBSU_ump",
+        "outputId": "c7c00e8c-0e26-4e2c-b118-099382a23192"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 3]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5. Clear"
+      ],
+      "metadata": {
+        "id": "oM8xFdYWAbJi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [1,2,3,4,5]\n",
+        "nums.clear()           #clears the list\n",
+        "print(nums)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WjxOKoa1AdI7",
+        "outputId": "8747a9ee-8e73-4bce-81b6-2a28e246afbd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6. Index"
+      ],
+      "metadata": {
+        "id": "RT3atWYcA5UJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [11,29,32,41]\n",
+        "print(nums.index(29))         # returns the index of the value\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aBlqKHcnA7My",
+        "outputId": "a83b3373-ba5c-430e-9d11-8af331f7149e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7. Counts"
+      ],
+      "metadata": {
+        "id": "Zc21JwPbDIvz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [1,1,1,2,2,2,4,2,2,1]\n",
+        "print(nums.count(2))             # counts how many time a value appears"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "y__GbWnPDLar",
+        "outputId": "90ffaa48-50bd-4d70-ebe0-970a92b86fa3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8. Sort"
+      ],
+      "metadata": {
+        "id": "kv7ALHGqD8CS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [5,3,6,2,1,4]\n",
+        "nums.sort()             #sorts the list\n",
+        "print(nums)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lR_qFMNTD902",
+        "outputId": "9c6e3a3f-1aed-4946-a358-29577604cbb4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 5, 6]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9. Reverse"
+      ],
+      "metadata": {
+        "id": "7FyqlB4-EaMS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nums = [1,2,3,4,5,6]\n",
+        "nums.reverse()\n",
+        "print(nums)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iDk6rn1REbzM",
+        "outputId": "5a3d65d8-16b5-401a-a529-b58cd5bd2f9f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[6, 5, 4, 3, 2, 1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "NUMPY is numerical Python.\n",
+        "Numpy stores numerical data in such a form that makes mathematical operations efficient."
+      ],
+      "metadata": {
+        "id": "nbEtFEel9dfR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "import numpy as np                          # imports numpy as np\n",
+        "\n",
+        "numbers = np.array([10, 20, 30, 40, 50])    # np.array (...) converts list into numpy array\n",
+        "\n",
+        "print(numbers)\n",
+        "print(numbers * 2)\n",
+        "print(numbers.mean())                       # numbers.mean() calculates the average\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3fbhcNqZ9f34",
+        "outputId": "d5467a0b-585b-437b-e379-0e02416aba7d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10 20 30 40 50]\n",
+            "[ 20  40  60  80 100]\n",
+            "30.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Concept\tExample\tWhat it does\n",
+        "\n",
+        "1. Create an array -\tnp.array([1, 2, 3])-\tStores numerical values\n",
+        "2. Check the shape -\tarr.shape -\tShows dimensions\n",
+        "3. Access a value\tarr - [0] -\tGets the first element\n",
+        "4. Calculate an average\t - arr.mean() - Finds the mean\n",
+        "5. Multiply elements - arr * 3 -\tScales every element"
+      ],
+      "metadata": {
+        "id": "gt2RiiDzL4FJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "arr = np.array([2,4,6,8])\n",
+        "print(arr + 3)                # add 3 to each element in arr\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "d4ryh03VMsae",
+        "outputId": "cb6e276d-9faa-4132-a165-f6283287b31b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 5  7  9 11]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "data = np.array([2,3,4,6])\n",
+        "print(\"Array:\", data)\n",
+        "print(\"Shape:\", data.shape)\n",
+        "print(\"Dimension:\", data.ndim)\n",
+        "print(\"Size\", data.size)\n",
+        "print(\"Data type:\", data.dtype)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8Xt20i_dPKcc",
+        "outputId": "d34ad026-4a04-46cb-e924-c1d8bb868c0c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array: [2 3 4 6]\n",
+            "Shape: (4,)\n",
+            "Dimension: 1\n",
+            "Size 4\n",
+            "Data type: int64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Creating Arrays in different ways"
+      ],
+      "metadata": {
+        "id": "QvG4ZJnlMNTZ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Creating arrays with zeros"
+      ],
+      "metadata": {
+        "id": "vGoC96aaMV8K"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "arr = np.zeros(5)\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cH9W2uHTMaDi",
+        "outputId": "5aa4717a-d2a2-41fb-cb91-b04e7ff4fe6d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0. 0. 0. 0. 0.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "arr = np.ones(4)\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IUrm_65ZPpRk",
+        "outputId": "188eb47d-2267-4ca1-d7cb-2d2201a31d64"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1. 1. 1. 1.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "arr = np.arange(1,6)\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6sKnB9GEP6QV",
+        "outputId": "3a96490a-706c-40b4-dec6-547f1130075b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1 2 3 4 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "arr = np.linspace(1,2,5)     # basically starts at 1 stops at 2 and divides equally in 5 mumber between 1 and 2\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mUypnhGZRm3R",
+        "outputId": "e941eee7-cfeb-43b4-e4db-4629c2f33b8d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1.   1.25 1.5  1.75 2.  ]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Indexing (Python and numpy use zero based indexing)"
+      ],
+      "metadata": {
+        "id": "3HeW92AIVC_Z"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "arr = np.array([10,20,30,40,50])\n",
+        "print(arr[0])                               # this is the 1st element\n",
+        "print(arr[3])\n",
+        "print(arr[4])                               # this is the last element\n",
+        "print(arr[-1])  # also means last element   Negative marking starts from last number\n",
+        "print(arr[-2])                              So [-2] is basically second last and so on"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Pj4NpZy4Vh90",
+        "outputId": "387d0036-7396-4db3-8531-c0f7e4930c03"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n",
+            "40\n",
+            "50\n",
+            "50\n",
+            "40\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Slicing - Selecting a range"
+      ],
+      "metadata": {
+        "id": "mm2qmBn9XEsY"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "arr = np.array([10,20,44,32,56,23,23])\n",
+        "print(arr[0:4])                          #prints index 0,1,2,3\n",
+        "print(arr[1:4])                          #prints index 1,2,3\n",
+        "print(arr[:5])                           #prints first 5 index\n",
+        "print(arr[5:])                           #prints index 5 to end\n",
+        "print(arr[::3])                          # prints every 3 index"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ufT7W9n0Vp_S",
+        "outputId": "f58f4847-b71f-4bee-ed15-140a0dc384cc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10 20 44 32]\n",
+            "[20 44 32]\n",
+            "[10 20 44 32 56]\n",
+            "[23 23]\n",
+            "[10 32 23]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "arr = np.array([\n",
+        "    [1,5],\n",
+        "    [3,6],\n",
+        "    [0,4]\n",
+        "    ])\n",
+        "print(arr[0,1])     # prints sample from 1st row 2nd column\n",
+        "print(arr[1])       # prints the element at index 1\n",
+        "print(arr[:,1])     # prints 2nd column  : is rows and 1 is column\n",
+        "print(arr[:2])      # prints 1st to sample"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rvXYYq_BdQX1",
+        "outputId": "d94320c9-07f2-4217-fd28-8444df7b9ef0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n",
+            "[3 6]\n",
+            "[5 6 4]\n",
+            "[[1 5]\n",
+            " [3 6]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Boolean filtering"
+      ],
+      "metadata": {
+        "id": "WBflmwCDpHl5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "scores = np.array([0.1, 0.33, 0.17, 0.56, 0.92, 0.35, 0.45])\n",
+        "masks = scores > 0.56\n",
+        "print (masks)                # gives true for scores > 0.56 else false\n",
+        "print (scores[masks])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qRkvOufSpUbt",
+        "outputId": "94c28197-08db-46bd-a0fd-7903921eb04b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[False False False False  True False False]\n",
+            "[0.92]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Fancy indexing - selecting a specific position"
+      ],
+      "metadata": {
+        "id": "5fMs8Or16U-O"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "scores = np.array([23,43,32,23,43,23,33])\n",
+        "select = scores[[0,3,5]]                     # print value at index 0 3 5\n",
+        "print(select)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "B5rphD5O6tQQ",
+        "outputId": "7d1d4b8a-6bae-4631-dcd0-0fe6f6445da9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[23 23 23]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Transpose - Rows becomes columns"
+      ],
+      "metadata": {
+        "id": "j3rpVABD4n_V"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "matrix = np.array([\n",
+        "    [1, 3],\n",
+        "    [3, 4],\n",
+        "    [3, 8]\n",
+        "])\n",
+        "\n",
+        "transpose = matrix.T\n",
+        "print(transpose)\n",
+        "print(transpose.shape)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qxY80s8k3nt1",
+        "outputId": "945513ef-5812-4c30-81a7-c40c3e9bfdba"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1 3 3]\n",
+            " [3 4 8]]\n",
+            "(2, 3)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Axis : Key to NumPy Calculations"
+      ],
+      "metadata": {
+        "id": "rZq30lh24xlJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "matrix = np.array([\n",
+        "    [1, 2, 3],\n",
+        "    [2, 6, 4],\n",
+        "    [1, 0, 1]\n",
+        "])\n",
+        "\n",
+        "print(matrix.sum(axis=0))     # axis 0 is basically rows so gives a sum of the columns\n",
+        "print(matrix.sum(axis=1))     # axis 1 is basically columns so gives a sum or rows\n",
+        "print(matrix.flatten)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YJDVaZsv55aA",
+        "outputId": "2b1df14b-ebeb-4176-c320-0581f38844be"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[4 8 8]\n",
+            "[ 6 12  2]\n",
+            "<built-in method flatten of numpy.ndarray object at 0x7a98671755f0>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Vectorization and Broadcasting"
+      ],
+      "metadata": {
+        "id": "9iQPKO_k_6Dd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "prices = np.array([90, 100, 200, 300, 400])\n",
+        "discount_price = prices * 0.9\n",
+        "print(discount_price)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qfUgxx2JAA7X",
+        "outputId": "1e1b448f-02a2-49a5-b0ac-d94faee96274"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 81.  90. 180. 270. 360.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "a = np.array([1, 2, 3, 5, 7])\n",
+        "b = np.array([0, 1, 2, 5, 1])\n",
+        "\n",
+        "print(a+b)\n",
+        "print(a-b)\n",
+        "print(a*b)\n",
+        "print(a/b)\n",
+        "print(a//b)\n",
+        "print(a**b)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fBUnEfXWC1q7",
+        "outputId": "bffbee52-02d6-492a-f63f-c51edcc917a0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 1  3  5 10  8]\n",
+            "[1 1 1 0 6]\n",
+            "[ 0  2  6 25  7]\n",
+            "[inf 2.  1.5 1.  7. ]\n",
+            "[0 2 1 1 7]\n",
+            "[   1    2    9 3125    7]\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/tmp/ipykernel_1396/3691760149.py:8: RuntimeWarning: divide by zero encountered in divide\n",
+            "  print(a/b)\n",
+            "/tmp/ipykernel_1396/3691760149.py:9: RuntimeWarning: divide by zero encountered in floor_divide\n",
+            "  print(a//b)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Vectorization - Means expressing operations on an entire array rathar than writing python loop for every element."
+      ],
+      "metadata": {
+        "id": "VVSlJLTCD1zi"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Python loop approach"
+      ],
+      "metadata": {
+        "id": "hwWdPsbBGxcA"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numbers = [1,2,3,4,5]\n",
+        "result = []\n",
+        "for n in numbers:\n",
+        "  result.append(n*2)\n",
+        "  print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1ma3mG6-F50w",
+        "outputId": "c52b519a-e48d-4eb7-a5c7-99fef28c6712"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[2]\n",
+            "[2, 4]\n",
+            "[2, 4, 6]\n",
+            "[2, 4, 6, 8]\n",
+            "[2, 4, 6, 8, 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Numpy Vectorization"
+      ],
+      "metadata": {
+        "id": "pfNEWk2hHcna"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "number = np.array([1,2,3,4,5])\n",
+        "result = number * 2\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GH0Z2HjUHkVx",
+        "outputId": "7d881256-ba53-42ec-e3c2-21f8932e8e08"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 2  4  6  8 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Why can NumPy be faster?\n",
+        "- Less Python overhead: fewer interpreted loop iterations.\n",
+        "- Optimised native code: many NumPy operations run in compiled C or other low-level implementations.\n",
+        "- Efficient memory handling: NumPy stores arrays in structured numerical memory, often making large calculations more efficient.\n",
+        "- Optimised numerical routines: some operations can use specialised libraries and hardware optimisations."
+      ],
+      "metadata": {
+        "id": "MOIXHhJSIQuq"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Broadcasting: Arrays of different shapes"
+      ],
+      "metadata": {
+        "id": "CW7ZMvXLImER"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "marks = np.array([\n",
+        "    [1,2],\n",
+        "    [2,3],\n",
+        "    [1,3]\n",
+        "])\n",
+        "adjust = np.array([0,1])      # added 0 to column 1 and 1 to column 2\n",
+        "print(marks + adjust)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hOVHE-NAIfi_",
+        "outputId": "70e032ed-2821-4bd4-a738-18e4e853d05f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1 3]\n",
+            " [2 4]\n",
+            " [1 4]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = [1, 2, 3, 4]\n",
+        "b = a.copy()\n",
+        "b.append(5)\n",
+        "print(a)\n",
+        "print(b)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1SSAVB7GBVfa",
+        "outputId": "30bb784c-a3ea-4fa8-a1c2-696ad6dbf6c8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4]\n",
+            "[1, 2, 3, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Broadcasting - (3,2) + (2,) = (3,2)   (3,2) + (3,) = Not compatilble."
+      ],
+      "metadata": {
+        "id": "Qurc3hczFPX-"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Normalizing data - ML models often work better when numerical features are on comparable scales."
+      ],
+      "metadata": {
+        "id": "wH2UaBLKIcYe"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "X = np.array([10., 20., 30.])           # 10. means its a float\n",
+        "X_scaled = (X - X.mean()) / X.std()"
+      ],
+      "metadata": {
+        "id": "LQKCxuaiTP-K"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Image Processing - Image pixels can be represented as arrays"
+      ],
+      "metadata": {
+        "id": "ejXCmvv2TRH2"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Model Calculations - A simple linear model computes predictions using weights and bias."
+      ],
+      "metadata": {
+        "id": "k9jqjmUQZM_q"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "X = np.array([[10., 12.],\n",
+        "              [12., 10.]])\n",
+        "Weights = np.array([0.5, 2.7])\n",
+        "Bias = 1.0\n",
+        "prediction = X @ Weights + Bias       # @ is matrix multiplication here\n",
+        "print(prediction)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CxGdki8UZ6Th",
+        "outputId": "0f538fa6-3043-4dc4-b8e8-980d226e6cec"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[38.4 34. ]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Vectororized Mathematical Functions - Numpy has build in mathematical function that operates on entire arrays."
+      ],
+      "metadata": {
+        "id": "KLbdauSDgUHO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "numbers = np.array([1, 4, 9, 16, 25])\n",
+        "print(np.sqrt(numbers))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZfAA7dQmrzJ2",
+        "outputId": "d19d0b3a-1e1f-4056-8e1d-9b8bc75b12dd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1. 2. 3. 4. 5.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Function\t    Purpose\n",
+        "np.sqrt()    \tSquare root\n",
+        "np.abs()\t    Absolute value\n",
+        "np.exp()\t    Exponential\n",
+        "np.log()\t    Natural logarithm\n",
+        "np.sin()\t    Sine\n",
+        "np.round()\t  Rounding\n",
+        "np.maximum()\tElement-wise maximum"
+      ],
+      "metadata": {
+        "id": "w-iGIs6wtaPu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "numbers = np.array([-5, -2, 0, 3, 5])\n",
+        "print(np.abs(numbers))\n",
+        "print(np.log(numbers))\n",
+        "print(np.round(numbers))\n",
+        "print(np.sin(numbers))\n",
+        "print(np.maximum(numbers, 3))\n",
+        "print(np.exp(numbers))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j5VKVLA5uViN",
+        "outputId": "b719cd90-6b2a-40a3-b347-e3dc59153eff"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[5 2 0 3 5]\n",
+            "[       nan        nan       -inf 1.09861229 1.60943791]\n",
+            "[-5 -2  0  3  5]\n",
+            "[ 0.95892427 -0.90929743  0.          0.14112001 -0.95892427]\n",
+            "[3 3 3 3 5]\n",
+            "[6.73794700e-03 1.35335283e-01 1.00000000e+00 2.00855369e+01\n",
+            " 1.48413159e+02]\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/tmp/ipykernel_4118/2723515505.py:4: RuntimeWarning: divide by zero encountered in log\n",
+            "  print(np.log(numbers))\n",
+            "/tmp/ipykernel_4118/2723515505.py:4: RuntimeWarning: invalid value encountered in log\n",
+            "  print(np.log(numbers))\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "numbers = np.array([223, 334, 222, 223, 753])\n",
+        "print(np.min(numbers))\n",
+        "print(np.max(numbers))\n",
+        "print(np.mean(numbers))\n",
+        "print(np.median(numbers))\n",
+        "print(np.std(numbers))             # standard deviation\n",
+        "print(np.var(numbers))             # variance\n",
+        "print(np.argmax(numbers))          # gives index of max number\n",
+        "print(np.argmin(numbers))          # gives index of the min number"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_kSJSeNvJMx8",
+        "outputId": "4bf2ae36-d040-4315-93ab-10ef6432acc5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "222\n",
+            "753\n",
+            "351.0\n",
+            "223.0\n",
+            "205.57334457560395\n",
+            "42260.4\n",
+            "4\n",
+            "2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "With a 2D Array"
+      ],
+      "metadata": {
+        "id": "jotm_EXSadCN"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "twod_array = np.array([\n",
+        "            [1,2,3],\n",
+        "            [2,2,1],\n",
+        "            [1,1,1]\n",
+        "            ])\n",
+        "print(np.mean(twod_array, axis=0))     # mean or avg of all the columns\n",
+        "print(np.mean(twod_array, axis=1))     # mean or avg of all rows"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pC_Ng_sHacO3",
+        "outputId": "acc2ea7b-9d93-451d-ebdd-274a28fa2903"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1.33333333 1.66666667 1.66666667]\n",
+            "[2.         1.66666667 1.        ]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Feauture Normalization or Normalization is basically rescaling your numbers so they are measured in how far they are from average instead of in their orignal units."
+      ],
+      "metadata": {
+        "id": "6X1qhg1P9Aql"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "x = np.array([\n",
+        "     [1, 2, 3],\n",
+        "     [2, 3, 4],\n",
+        "     [5, 6, 7],\n",
+        "     [1, 2, 3]\n",
+        "])\n",
+        "mean = x.mean(axis=0)\n",
+        "std = x.std(axis=0)\n",
+        "x_scaled = (x - mean)/std                      # Normalization\n",
+        "print(x_scaled)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EhZqapPfJ_VT",
+        "outputId": "4b194337-9dda-4b0f-cd68-92a399cce5fb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[-0.76249285 -0.76249285 -0.76249285]\n",
+            " [-0.15249857 -0.15249857 -0.15249857]\n",
+            " [ 1.67748427  1.67748427  1.67748427]\n",
+            " [-0.76249285 -0.76249285 -0.76249285]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "rng = np.random.default_rng(42)\n",
+        "\n",
+        "print(rng.random(4))                       # Random decimal numbers from 0 to 1\n",
+        "\n",
+        "\n",
+        "print(rng.integers(1, 10, size=5))         # Random integers from 1 to 10 (10 excluded)\n",
+        "\n",
+        "\n",
+        "print(rng.normal(0, 1, size=5))            # Random values from a normal distribution\n",
+        "\n",
+        "\n",
+        "values = np.array([10, 20, 30, 40, 50])    # Shuffle an array in place\n",
+        "rng.shuffle(values)\n",
+        "print(values)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oR4rXnF1Ep4J",
+        "outputId": "39d18583-87bd-4671-e3cf-4fa530777218"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0.77395605 0.43887844 0.85859792 0.69736803]\n",
+            "[2 1 5 9 7]\n",
+            "[-0.31624259 -0.01680116 -0.85304393  0.87939797  0.77779194]\n",
+            "[10 40 50 30 20]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "rng = np.random.default_rng(42)\n",
+        "X = rng.normal(50, 10, size=(3,4))\n",
+        "mean = X.mean(axis=0)\n",
+        "std = X.std(axis=0)\n",
+        "X_scaled = (X - mean)/std\n",
+        "print(\"Orginal Shape\", X.shape)\n",
+        "print(\"X_scaled Shape\", X_scaled.shape)\n",
+        "print(\"X_scaled mean\", X_scaled.mean(axis=0))\n",
+        "print(\"X_scaled Std\", X_scaled.std(axis=0))\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MdpVyFfcve60",
+        "outputId": "1f1ff791-c7ea-454b-faf7-48ca929c5013"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Orginal Shape (3, 4)\n",
+            "X_scaled Shape (3, 4)\n",
+            "X_scaled mean [-1.48029737e-16  1.25825276e-15  0.00000000e+00  4.07081776e-16]\n",
+            "X_scaled Std [1. 1. 1. 1.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Vectorised mathematical functions: np.sqrt(), np. abs(), np.exp(), np.log().\n",
+        "\n",
+        "Aggregation: np.mean(), np.sum(), np.std(), np.min(), np.max().\n",
+        "\n",
+        "Random numbers: rng.random(), rng.integers(), rng.normal(), rng.permutation().\n",
+        "\n",
+        "Reproducibility: np.random.default_rng(42) creates a repeatable pseudorandom sequence."
+      ],
+      "metadata": {
+        "id": "na3dh8joEgDU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Linear Algebra"
+      ],
+      "metadata": {
+        "id": "odGYg31tE_KD"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "vector = np.array([20, 30, 40, 50])\n",
+        "print(vector)\n",
+        "print(vector.shape)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qfPMysOOFCBy",
+        "outputId": "7c8e7c95-b126-4d7e-a030-e8209aeae3c0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[20 30 40 50]\n",
+            "(4,)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "matrix = np.array([\n",
+        "                 [11, 22, 33],\n",
+        "                 [44, 55, 66],\n",
+        "                 [21, 32, 56]\n",
+        "                 ])\n",
+        "print(matrix)\n",
+        "print(matrix.shape)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "U8npUc5lGQY9",
+        "outputId": "9affc4c2-f2d7-418a-e714-5af8f20bd165"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[11 22 33]\n",
+            " [44 55 66]\n",
+            " [21 32 56]]\n",
+            "(3, 3)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "DOT PRODUCT"
+      ],
+      "metadata": {
+        "id": "9JZFtUGTHBNs"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "a = np.array([2, 3, 4])\n",
+        "b = np.array([1, 0, 1])\n",
+        "result = np.dot(a, b)            #vector multiplication\n",
+        "print(result)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9ubCNBLEHEFe",
+        "outputId": "b7cff932-b62a-4fda-d5ab-3ab7c4806f99"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "a = np.array([\n",
+        "             [1, 0, 0],\n",
+        "             [1, 1, 0],\n",
+        "             [1, 1, 1]\n",
+        "             ])\n",
+        "b = np.array([\n",
+        "             [2, 2, 2],\n",
+        "             [2, 2, 2],\n",
+        "             [2, 2, 2]\n",
+        "             ])\n",
+        "result = a @ b\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dLCtyPPHIA-j",
+        "outputId": "a37a5c80-f198-4ad3-a712-7822bdc8d935"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[2 2 2]\n",
+            " [4 4 4]\n",
+            " [6 6 6]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "a * b = element wise multiplication\n",
+        "\n",
+        "np.dot(a,b) = vector multiplication\n",
+        "\n",
+        "a @ b = matrix multiplication"
+      ],
+      "metadata": {
+        "id": "TlFwMwlfV3Ql"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.array([\n",
+        "             [1, 0, 1],\n",
+        "             [3, 3, 3],\n",
+        "             [1, 1, 1]\n",
+        "])\n",
+        "Transpose = (a.T)              # transpose matrix\n",
+        "print(Transpose)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "n5bGHhhAWMSZ",
+        "outputId": "cf7b60ed-dbc9-4097-fb95-d6af30eea9d3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1 3 1]\n",
+            " [0 3 1]\n",
+            " [1 3 1]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "hp = np.array([\n",
+        "              [ 1, 6, 88],\n",
+        "              [22, 1, 22],\n",
+        "              [1, 11, 11]\n",
+        "])\n",
+        "inverse = np.linalg.inv(hp)\n",
+        "print(inverse)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jqMzBi5IXA6l",
+        "outputId": "eafdf7cb-320a-4a57-8324-9246caeb62e9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[-0.01175154  0.04588696  0.00223839]\n",
+            " [-0.01119194 -0.00391718  0.09736989]\n",
+            " [ 0.01226026 -0.00025436 -0.00666429]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Numpy for Machine Learning - Building a small Healthcare data to prepare it for machine learning."
+      ],
+      "metadata": {
+        "id": "RMiT5abzotPt"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Understanding features (X) and datasets (Y)\n",
+        "Imagine a person may be at risk of a particular condition: Age, Cholestrol, Blood Pressure.\n",
+        "\n",
+        "These are our features presented by X\n"
+      ],
+      "metadata": {
+        "id": "HdnQJTzjpQ_W"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Example healthcare dataset\n",
+        "\n",
+        "Patient\t Age   \tBP  \tCholesterol\t  At risk(y)\n",
+        "1\t       25\t   120\t      180\t        0\n",
+        "2\t       40\t   135\t      210\t        1\n",
+        "3\t       35\t   128\t      195\t        0\n",
+        "4\t       55\t   145\t      240\t        1"
+      ],
+      "metadata": {
+        "id": "_QfNS6lLqzqx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "X = np.array([\n",
+        "              [25, 120, 180],\n",
+        "              [40, 135, 210],\n",
+        "              [35, 128, 195],\n",
+        "              [55, 145, 240]\n",
+        "])\n",
+        "y = np.array([0,1,0,1])\n",
+        "print(\"Feature:\", X)\n",
+        "\n",
+        "print(\"Labels:\", y)\n",
+        "print(X.shape)\n",
+        "print(y.shape)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Al4eBlw9qyRh",
+        "outputId": "aa4345ae-5fba-4f98-a195-9033287f65a0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Feature: [[ 25 120 180]\n",
+            " [ 40 135 210]\n",
+            " [ 35 128 195]\n",
+            " [ 55 145 240]]\n",
+            "Labels: [0 1 0 1]\n",
+            "(4, 3)\n",
+            "(4,)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Why normalization matters - Some Machine learning algorithms may be affected by the difference in feature scale. We often therefore scale numerical features before training.\n",
+        "\n",
+        "Imagine two features\n",
+        "1. Age: 25-55\n",
+        "2. Cholestrol: 180-240"
+      ],
+      "metadata": {
+        "id": "AMfxuYpLulFb"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Two Common Methods\n",
+        "1. Min-Max Normalization\n",
+        "   X_scaled = X - X_min/ X_max - X_min\n",
+        "\n",
+        "   The smallest value becomes 0 and the largest becomes 1.\n",
+        "        "
+      ],
+      "metadata": {
+        "id": "AT13HiT1x52L"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "values = np.array([10, 20, 30, 40, 50])\n",
+        "normalized = (values - values.min())/(values.max()  - values.min())\n",
+        "print(normalized)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "x0ElC_NE1oww",
+        "outputId": "c2ee6f35-b3e3-4db9-8df6-8b159d5d56e6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0.   0.25 0.5  0.75 1.  ]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. Standardization (Z-score scaling): Instead of forcing values from 0 to 1 range, It transforms them so that each feature has.\n",
+        "   Mean approximately 0\n",
+        "   Standard deviation approximately 1\n",
+        "\n",
+        "   Z = (X - miu)/ sigma\n",
+        "\n",
+        "   X = orignal value\n",
+        "   miu = mean\n",
+        "   sigma = standard deviation"
+      ],
+      "metadata": {
+        "id": "OLVLwZR61nCx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "values = np.array([10, 20, 30, 40, 50])\n",
+        "mean = values.mean()\n",
+        "std = values.std()\n",
+        "\n",
+        "Z = (values - mean)/std\n",
+        "print(Z)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jSTJa-pv2aL9",
+        "outputId": "94bf0971-9140-4582-a43e-6fca6132efd6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[-1.41421356 -0.70710678  0.          0.70710678  1.41421356]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "A value of zero is exactly at the average. A positive values above the average and negative below the average."
+      ],
+      "metadata": {
+        "id": "7YY6XO4_BBXn"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Apply standardization to healthcare data set"
+      ],
+      "metadata": {
+        "id": "gtdHyLkhBSdx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "X = np.array([\n",
+        "              [25, 120, 180],\n",
+        "              [40, 135, 210],\n",
+        "              [35, 128, 195],\n",
+        "              [55, 145, 240]\n",
+        "])\n",
+        "X_mean = X.mean(axis=0)\n",
+        "X_std = X.std(axis=0)\n",
+        "X_standardization = (X - X_mean)/X_std\n",
+        "print(X_standardization)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fFPp3N-SB9Z6",
+        "outputId": "a4a01428-4586-4cf7-a476-cef3328780d1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[-1.27017059 -1.3054279  -1.18321596]\n",
+            " [ 0.11547005  0.32635698  0.16903085]\n",
+            " [-0.34641016 -0.43514263 -0.50709255]\n",
+            " [ 1.5011107   1.41421356  1.52127766]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Why axis=0?\n",
+        "\n",
+        "Because we want to calculate the mean and standard deviation separately for each feature (each column)."
+      ],
+      "metadata": {
+        "id": "aBzKpf_xDP_1"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Veryy very important********\n",
+        "\n",
+        "In real MAchine learning workflows, calculate the mean and the deviation using the training data only. and then use those values to transform the testing data.\n",
+        "\n",
+        "Otherwise information from the testing data may leak in to the training data. This is called data leakage"
+      ],
+      "metadata": {
+        "id": "r1-Y7AlEDywj"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Splitting Data - Into traing and testing sets\n",
+        "Training sets - Teaches model\n",
+        "Testing sets - evaluates model"
+      ],
+      "metadata": {
+        "id": "fNgXpjvpFniM"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "X = np.array([\n",
+        "             [10, 22, 33],\n",
+        "             [11, 32, 34],\n",
+        "             [87, 45, 12],\n",
+        "             [11, 43, 64],\n",
+        "             [76, 34, 12],\n",
+        "             [11, 76, 34],\n",
+        "             [10, 21, 54],\n",
+        "             [43, 67, 12],\n",
+        "             [32, 56, 12],\n",
+        "             [17, 23, 23]\n",
+        "])\n",
+        "y = np.array([0, 1, 0, 1, 1, 0, 1, 1, 0, 1])\n",
+        "rng = np.random.default_rng(42)\n",
+        "indices = rng.permutation((len(X)))\n",
+        "split = (int)(0.8*len(X))\n",
+        "train_indices = indices[:split]\n",
+        "test_indices = indices[split:]\n",
+        "X_train = X[train_indices]\n",
+        "X_test = X[test_indices]\n",
+        "Y_train = y[train_indices]\n",
+        "Y_test = y[test_indices]\n",
+        "print(X_train.shape)\n",
+        "print(X_test.shape)\n",
+        "print(Y_train.shape)\n",
+        "print(Y_test.shape)\n",
+        "\n",
+        "print(\"X_train\",X_train)\n",
+        "print(\"X_test\",X_test)\n",
+        "print(\"Y_train\",Y_train)\n",
+        "print(\"Y_test\",Y_test)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0ZDPZvV_HWNn",
+        "outputId": "56d57df4-3284-4ea3-9197-68becbd3216a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(8, 3)\n",
+            "(2, 3)\n",
+            "(8,)\n",
+            "(2,)\n",
+            "X_train [[11 76 34]\n",
+            " [10 21 54]\n",
+            " [10 22 33]\n",
+            " [43 67 12]\n",
+            " [11 43 64]\n",
+            " [87 45 12]\n",
+            " [76 34 12]\n",
+            " [17 23 23]]\n",
+            "X_test [[11 32 34]\n",
+            " [32 56 12]]\n",
+            "Y_train [0 1 0 1 1 0 1 1]\n",
+            "Y_test [1 0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Now we have 8 sets of training data and 2 sets of testing data and the original 3 features are preserved as it it."
+      ],
+      "metadata": {
+        "id": "Dgz2mEbOTs57"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Handling missing values - let say a patients cholestrol data is missing.\n",
+        "Numpy can represent missing data using np.nan"
+      ],
+      "metadata": {
+        "id": "gHtwNwZDVJ6h"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data = np.array([\n",
+        "                [10, 10, 12],\n",
+        "                [11, np.nan, 65],\n",
+        "                [43, 76, 12],\n",
+        "                [np.nan, 34, 11]\n",
+        "                ])\n",
+        "print(data)\n",
+        "\n",
+        "print(np.isnan(data))       # (For missing data) Returns true whenever a value is missing\n",
+        "\n",
+        "print(np.isnan(data).sum()) # count missing values"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0sKqRV4UVh49",
+        "outputId": "8ac334c0-1ef5-4bfb-e1a2-8caa405ce14a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[10. 10. 12.]\n",
+            " [11. nan 65.]\n",
+            " [43. 76. 12.]\n",
+            " [nan 34. 11.]]\n",
+            "[[False False False]\n",
+            " [False  True False]\n",
+            " [False False False]\n",
+            " [ True False False]]\n",
+            "2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Replace missing values - one simple method is used to replace missing values by column means"
+      ],
+      "metadata": {
+        "id": "LPqEsxqObpnk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "data = np.array([\n",
+        "                [12, 32, 12],\n",
+        "                [43, np.nan, 11],\n",
+        "                [np.nan, 10, 72]\n",
+        "])\n",
+        "\n",
+        "column_means = np.nanmean(data, axis =0)\n",
+        "rows, columns = np.where(np.isnan(data))\n",
+        "data[rows, columns] = column_means[columns]\n",
+        "print(data)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9UtL70UvcDqY",
+        "outputId": "77b2df3a-2692-4f82-bb25-78724df0c936"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[12.  32.  12. ]\n",
+            " [43.  21.  11. ]\n",
+            " [27.5 10.  72. ]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "In real machine learning projects, calculate the missing numbers using training data and use that to find the missing test data values. Depending on the problem, median imputation or more advanced methods may be more appropriate."
+      ],
+      "metadata": {
+        "id": "ureBa2G7gsQu"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "A mini ML data preparation workflow\n",
+        "a. Create a test database (may be add missing values and fix them as well).\n",
+        "b. Split into training and testing data\n",
+        "c. Calculate training values from training data\n",
+        "d. standardize both datasets using those training values."
+      ],
+      "metadata": {
+        "id": "3bw4xyTziQHQ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Patient Age Cholestrol Blood Pressure  HD/DHD\n",
+        "1        29   10           78           0\n",
+        "2        68   87           120          1\n",
+        "3        37   76           87           1\n",
+        "4        36  np.nan       98           1\n",
+        "5        68   46           68           0\n",
+        "6        37   39           np.nan       0\n",
+        "7        25   81           np.nan       np.nan\n",
+        "8        68   np.nan       67           np.nan\n",
+        "9        78   19           86           np.nan\n",
+        "10       36   49           97           0"
+      ],
+      "metadata": {
+        "id": "kXmTHGs3jjuc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "p_data = np.array([\n",
+        "          [29, 10, 78],\n",
+        "          [68, 87, 120],\n",
+        "          [37, 76, 87],\n",
+        "          [36, np.nan, 98],\n",
+        "          [68, 46, 68],\n",
+        "          [37, 39, np.nan],\n",
+        "          [25, 81, np.nan],\n",
+        "          [68, np.nan, 67],\n",
+        "          [78, 19, 86],\n",
+        "          [36, 49, 97]\n",
+        "])\n",
+        "print(\"Missing values count:\", np.isnan(p_data).sum())\n",
+        "\n",
+        "result = np.array([0, 1, 1, 1, 0, 0, 1, 0, 0, 0])\n",
+        "\n",
+        "# Splitting into training and testing indices first to avoid data leakage\n",
+        "rng = np.random.default_rng(42)\n",
+        "indices = rng.permutation(len(p_data))\n",
+        "\n",
+        "split = int(0.8 * len(p_data))\n",
+        "train_idx = indices[:split]\n",
+        "test_idx = indices[split:]\n",
+        "\n",
+        "ptrain = p_data[train_idx]\n",
+        "ptest = p_data[test_idx]\n",
+        "\n",
+        "result_train = result[train_idx]\n",
+        "result_test = result[test_idx]\n",
+        "\n",
+        "# Imputing missing values using training column means only\n",
+        "column_mean = np.nanmean(ptrain, axis=0)\n",
+        "\n",
+        "rows_tr, cols_tr = np.where(np.isnan(ptrain))\n",
+        "ptrain[rows_tr, cols_tr] = column_mean[cols_tr]\n",
+        "\n",
+        "rows_ts, cols_ts = np.where(np.isnan(ptest))\n",
+        "ptest[rows_ts, cols_ts] = column_mean[cols_ts]\n",
+        "\n",
+        "# Calculate statistics from training data\n",
+        "mean = ptrain.mean(axis=0)\n",
+        "std = ptrain.std(axis=0)\n",
+        "\n",
+        "Scaled_ptrain = (ptrain - mean) / std\n",
+        "Scaled_ptest = (ptest - mean) / std\n",
+        "\n",
+        "print(\"\\nTraining Data (Scaled):\\n\", Scaled_ptrain)\n",
+        "print(\"\\nTesting Data (Scaled):\\n\", Scaled_ptest)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7y7oBzwGljK7",
+        "outputId": "fa3286a4-9345-46cf-aecf-d53ee08c9799"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Missing values count: 4\n",
+            "\n",
+            "Training Data (Scaled):\n",
+            " [[-0.32174473 -0.54367878  0.        ]\n",
+            " [-1.09393207  1.5012026   0.        ]\n",
+            " [-0.83653629 -1.95562068 -0.41480821]\n",
+            " [ 1.67307258  0.         -1.42878384]\n",
+            " [-0.38609367  0.          1.42878384]\n",
+            " [-0.32174473  1.25776434  0.41480821]\n",
+            " [ 1.67307258 -0.20286522 -1.33660424]\n",
+            " [-0.38609367 -0.05680226  1.33660424]]\n",
+            "\n",
+            "Testing Data (Scaled):\n",
+            " [[ 1.67307258  1.79332851  3.4567351 ]\n",
+            " [ 2.31656203 -1.51743181  0.32262861]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "p_data = np.array([\n",
+        "          [29, 10, 78],\n",
+        "          [68, 87, 120],\n",
+        "          [37, 76, 87],\n",
+        "          [36, np.nan, 98],\n",
+        "          [68, 46, 68],\n",
+        "          [37, 39, np.nan],\n",
+        "          [25, 81, np.nan],\n",
+        "          [68, np.nan, 67],\n",
+        "          [78, 19, 86],\n",
+        "          [36, 49, 97]\n",
+        "\n",
+        "])\n",
+        "print(np.isnan(p_data).sum())\n",
+        "\n",
+        "result = np.array([0, 1, 1, 1, 0, 0, 1, 0, 0, 0])\n",
+        "\n",
+        "# Dividing into training and testing data        # CHANGED: split comes FIRST now\n",
+        "\n",
+        "rng = np.random.default_rng(42)\n",
+        "indices = rng.permutation(len(p_data))\n",
+        "\n",
+        "split = int(0.8*len(p_data))\n",
+        "\n",
+        "train_idx = indices[:split]                      # CHANGED: keep the row positions\n",
+        "test_idx = indices[split:]\n",
+        "\n",
+        "ptrain = p_data[train_idx]                       # CHANGED: use positions, not data\n",
+        "ptest = p_data[test_idx]\n",
+        "\n",
+        "result_train = result[train_idx]                 # CHANGED\n",
+        "result_test = result[test_idx]                   # CHANGED: fixed typo \"restult_test\"\n",
+        "\n",
+        "# Now we need the missing numbers by \"column means\" (from TRAINING data only)   # CHANGED\n",
+        "\n",
+        "column_mean = np.nanmean(ptrain, axis=0)         # CHANGED: means from ptrain only\n",
+        "\n",
+        "rows, columns = np.where(np.isnan(ptrain))       # locating the coordinates of missing values\n",
+        "ptrain[rows, columns] = column_mean[columns]\n",
+        "\n",
+        "rows, columns = np.where(np.isnan(ptest))        # CHANGED: fill test gaps with the TRAIN means\n",
+        "ptest[rows, columns] = column_mean[columns]\n",
+        "\n",
+        "# calculate statistics from training data\n",
+        "\n",
+        "mean = ptrain.mean(axis=0)\n",
+        "std = ptrain.std(axis=0)\n",
+        "\n",
+        "Scaled_ptrain = (ptrain - mean)/std\n",
+        "Scaled_ptest = (ptest - mean)/std\n",
+        "\n",
+        "print(\"Training Data\", Scaled_ptrain)\n",
+        "print(\"Testing Data\", Scaled_ptest)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eyqf4cmnjzzd",
+        "outputId": "e38a5fb5-c676-4197-9146-d08fe904542d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "4\n",
+            "Training Data [[-0.32174473 -0.54367878  0.        ]\n",
+            " [-1.09393207  1.5012026   0.        ]\n",
+            " [-0.83653629 -1.95562068 -0.41480821]\n",
+            " [ 1.67307258  0.         -1.42878384]\n",
+            " [-0.38609367  0.          1.42878384]\n",
+            " [-0.32174473  1.25776434  0.41480821]\n",
+            " [ 1.67307258 -0.20286522 -1.33660424]\n",
+            " [-0.38609367 -0.05680226  1.33660424]]\n",
+            "Testing Data [[ 1.67307258  1.79332851  3.4567351 ]\n",
+            " [ 2.31656203 -1.51743181  0.32262861]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Loading data from files - In real ai projects data come from csv files, excel exports or databases and other sources"
+      ],
+      "metadata": {
+        "id": "iIAb8pDNpCT8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "data = np.loadtxt(\"patient.csv\", delimiter=\",\", skiprows=1)  # delimiter is values are seperated by comma\n",
+        "print(data)                                                  # skiprows skips the header row"
+      ],
+      "metadata": {
+        "id": "idIoi6IgtrAO"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "np.loadtxt works best with clean numerical data. For missing values, mixed data types or more complex csv files, np.genfromtxt() or pandas is often more suitable."
+      ],
+      "metadata": {
+        "id": "bbolBGHPvdHq"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Saving numpy arrays"
+      ],
+      "metadata": {
+        "id": "tva_qk4fv78Z"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# suppose you have processed data and want to save it\n",
+        "\n",
+        "import numpy as np\n",
+        "data = np.array([\n",
+        "                [11, 22, 12],\n",
+        "                [32, 42, 87],\n",
+        "                [11, 23, 56],\n",
+        "                [10, 21, 67]\n",
+        "])\n",
+        "np.save(\"patient.npy\", data)\n"
+      ],
+      "metadata": {
+        "id": "itXFqteov-qq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "To load it again"
+      ],
+      "metadata": {
+        "id": "xoX0X7hyw0nh"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "loaded_data = np.load(\"patient.npy\")\n",
+        "print(loaded_data)"
+      ],
+      "metadata": {
+        "id": "BXMakFwsw2YO"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Save a csv file"
+      ],
+      "metadata": {
+        "id": "K2H3B4a1xLl3"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.savetxt(\"patient.csv\", data, delimiter =\",\", fmt=\"%g\")\n"
+      ],
+      "metadata": {
+        "id": "m0r6atbzxOJY"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "nspbV3CC1Ifj"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Function\t       Purpose\n",
+        "np.loadtxt()\t   Load numerical text data\n",
+        "np.genfromtxt()  Load text data with missing values\n",
+        "np.save()\t       Save a NumPy array\n",
+        "np.load()        Load a saved NumPy array\n",
+        "np.savetxt()\t   Save an array as text or CSV"
+      ],
+      "metadata": {
+        "id": "x8tJuVzg0-At"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Combining data sets - sometimes data comes from multiple sources.\n",
+        "\n",
+        "Combine using np.concatenate()\n"
+      ],
+      "metadata": {
+        "id": "7mlByOUW1Qfp"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "import numpy as np\n",
+        "age = np.array([\n",
+        "               [1],\n",
+        "               [2],\n",
+        "               [2]"
+      ],
+      "metadata": {
+        "id": "xpIx6l1-3oLM"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "age = np.array([\n",
+        "               [1],\n",
+        "               [2],\n",
+        "               [2]\n",
+        "])\n",
+        "\n",
+        "bp = np.array([\n",
+        "              [3],\n",
+        "              [1],\n",
+        "              [1]\n",
+        "\n",
+        "])\n",
+        "\n",
+        "combined_data = np.concatenate((age, bp), axis=1)  # axis 1 combines column, axis 0 combines rows\n",
+        "print(combined_data)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DxdCGJT-4Vbq",
+        "outputId": "6bda3d2c-fc9f-4b7b-ebdb-445a3724efcc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1 3]\n",
+            " [2 1]\n",
+            " [2 1]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Detecting and handling outliers"
+      ],
+      "metadata": {
+        "id": "cMl9EzHj9wS0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "values = np.array([20, 22, 21, 23, 22, 24, 100])\n",
+        "\n",
+        "print(values.mean())"
+      ],
+      "metadata": {
+        "id": "Pae566UZ-CvT"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Now 100 lookss far to different from the rest observations."
+      ],
+      "metadata": {
+        "id": "NjVf1QxC-XQI"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "One common method is Interquartile method."
+      ],
+      "metadata": {
+        "id": "UUxaUcXPU29A"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "IQR = Q3 - Q1\n",
+        "\n",
+        "The usual boundaries are :\n",
+        "\n",
+        "Lower = Q1 - 1.5(IQR)\n",
+        "Upper = Q3 + 1.5(IQR)\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "xtN5mVFShQ-4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "values = np.array([20, 22, 21, 23, 22, 24, 100])\n",
+        "Q1 = np.percentile(values, 25)\n",
+        "Q3 = np.percentile(values, 75)\n",
+        "IQR = Q3 - Q1\n",
+        "lower = Q1 - 1.5*IQR\n",
+        "upper = Q3 + 1.5*IQR\n",
+        "Outlier = values[(values<lower)|(values>upper)]\n",
+        "print(\"Outlier\", Outlier)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nMzovxT6e7vY",
+        "outputId": "ce8216a3-e7fe-46cc-c075-d606614d0612"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Outlier [100]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Prepar data for ML model: Patient data\n",
+        "1. Age\n",
+        "2. Cholestrol\n",
+        "3. Bp"
+      ],
+      "metadata": {
+        "id": "YAx7UWI2r4b8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "data = np.array([\n",
+        "                [ 29, 10, 78],\n",
+        "                [ 68, 87, 120],\n",
+        "                [ 37, 76, 87],\n",
+        "                [ 36, 68, 98]\n",
+        "], dtype = float)\n",
+        "\n",
+        "mean = data.mean(axis=0)\n",
+        "std = data.std(axis=0)\n",
+        "\n",
+        "data_scaled = (data - mean)/std\n",
+        "\n",
+        "print(data_scaled)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pYLAvxybr368",
+        "outputId": "7b80c692-a6f4-4b08-a8aa-efdb0940f119"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[-0.89751037 -1.68705157 -1.13126762]\n",
+            " [ 1.69529736  0.89808218  1.54553464]\n",
+            " [-0.36565237  0.52877736 -0.55766714]\n",
+            " [-0.43213462  0.26019203  0.14340012]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Mini Project: Prepare Healthcare Data\n",
+        "\n",
+        "Your task is to create a dataset, inspect it, identify an outlier and standardise the features.\n"
+      ],
+      "metadata": {
+        "id": "zMPPfNtPxyku"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "p_data = np.array([\n",
+        "                   [25, 120, 180],\n",
+        "                   [30, 125, 190],\n",
+        "                   [35, 130, 200],\n",
+        "                   [40, 135, 210],\n",
+        "                   [45, 140, 220],\n",
+        "                   [50, 145, 230],\n",
+        "                   [55, 150, 240],\n",
+        "                   [60, 155, 500]\n",
+        "])\n",
+        "\n",
+        "# dividing the data in 1st quarter and 3rd quarter\n",
+        "\n",
+        "Q1 = np.percentile(p_data, 25)\n",
+        "Q3 = np.percentile(p_data, 75)\n",
+        "IQR = Q3 - Q1\n",
+        "\n",
+        "Lower = Q1 - 1.5*IQR\n",
+        "Upper = Q3 + 1.5*IQR\n",
+        "\n",
+        "Outlier = p_data[(p_data<Lower)|(p_data>Upper)]\n",
+        "print(\"Outlier\", Outlier)\n",
+        "\n",
+        "mean = p_data.mean(axis=0)\n",
+        "std = p_data.std(axis=0)\n",
+        "\n",
+        "Scaled_p_data = (p_data - mean)/std\n",
+        "print(Scaled_p_data)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mWsJHV-2_hPs",
+        "outputId": "9a101d8c-60ce-488c-da9b-d5fb15249ca7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Outlier [500]\n",
+            "[[-1.52752523 -1.52752523 -0.67798444]\n",
+            " [-1.09108945 -1.09108945 -0.57564717]\n",
+            " [-0.65465367 -0.65465367 -0.47330989]\n",
+            " [-0.21821789 -0.21821789 -0.37097262]\n",
+            " [ 0.21821789  0.21821789 -0.26863534]\n",
+            " [ 0.65465367  0.65465367 -0.16629807]\n",
+            " [ 1.09108945  1.09108945 -0.0639608 ]\n",
+            " [ 1.52752523  1.52752523  2.59680833]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "PANDAS - Pandas are excellent for organizing, cleaning, exploring and analysing data."
+      ],
+      "metadata": {
+        "id": "MDc7dnXqHozv"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Using series as dataframe"
+      ],
+      "metadata": {
+        "id": "c8GBqpclLa75"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Series is 1D label collection of data."
+      ],
+      "metadata": {
+        "id": "CA-jnKayLjhL"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "ages = pd.Series([20, 22, 21, 23, 43, 67, 78])\n",
+        "print(ages)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GIco9TrPLTPT",
+        "outputId": "f9d31bd2-adc4-489f-e840-76dce6328496"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0    20\n",
+            "1    22\n",
+            "2    21\n",
+            "3    23\n",
+            "4    43\n",
+            "5    67\n",
+            "6    78\n",
+            "dtype: int64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Yes, you could store the same numbers in a NumPy array. The difference is that a Pandas Series gives each number a label, and NumPy gives each number only a position"
+      ],
+      "metadata": {
+        "id": "7EAncJVuMST2"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "ages = np.array([20, 22, 21, 23, 43, 67, 78])\n",
+        "print(ages)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "U6BenKPIM-yo",
+        "outputId": "3438a2b2-b5ee-4724-9832-1a79be4528fb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[20 22 21 23 43 67 78]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Notice the numbers on the left. These are the index labels.\n",
+        "\n",
+        "DataFrame: A two-dimensional table with rows and columns. Think of an Excel spreadsheet."
+      ],
+      "metadata": {
+        "id": "FZ8GswxGM7Fk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "data = {\n",
+        "    \"Name\": [\"Pika\", \"Meow\"],\n",
+        "    \"Age\": [29, 29],\n",
+        "    \"Career\": [\"AI Engineer\", \"Game Designer\"],\n",
+        "    \"Salary_per_annum\": [70000, 75000],\n",
+        "    \"Company\": [\"Google(London)\", \"Rockstar(London)\"]}\n",
+        "data_frame = pd.DataFrame(data)\n",
+        "print(data_frame)\n",
+        "print(\"Pika+Meow = Successful\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "009HyKDsNcgx",
+        "outputId": "5035a657-ed46-438f-fd15-fa3a06c40637"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Name  Age         Career  Salary_per_annum   Company\n",
+            "0  Pika   29    AI Engineer             70000    Google\n",
+            "1  Meow   29  Game Designer             75000  Rockstar\n",
+            "Pika+Meow = Successful\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Loading real-world csv datasets"
+      ],
+      "metadata": {
+        "id": "fxGv9T8Phwcx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df = pd.read_csv(\"patient.csv\")\n",
+        "print(df)"
+      ],
+      "metadata": {
+        "id": "uqBADjM2ibdT"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Inspect a file"
+      ],
+      "metadata": {
+        "id": "BpOWEm8-jKfm"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(df.head())  # head() displays 1st five rows by default."
+      ],
+      "metadata": {
+        "id": "VnnSJ1Y9m5qh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "df.head(10) = first 10 rows\n",
+        "df.tail() = last 5 rows\n",
+        "df.shape = number of rows and columns\n",
+        "df.columns = column names\n",
+        "df.info() = data types and missing values\n",
+        "df.describe() = statistical summary"
+      ],
+      "metadata": {
+        "id": "KJgX2PzhrWqy"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Selecting rows and columns"
+      ],
+      "metadata": {
+        "id": "eb7p48KQu7qL"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "data = {\n",
+        "    \"Name\": [\"Pika\", \"Meow\"],\n",
+        "    \"Age\": [29, 29],\n",
+        "    \"Career\": [\"AI Engineer\", \"Game Designer\"],\n",
+        "    \"Salary_per_annum\": [70000, 75000],\n",
+        "    \"Company\": [\"Google(London)\", \"Rockstar(London)\"]\n",
+        "    }\n",
+        "data_frame = pd.DataFrame(data)\n",
+        "print(data_frame[\"Career\"])                                # Selecting a column\n",
+        "print(data_frame[[\"Name\", \"Age\"]])                         # Selecting multiple columns\n",
+        "\n",
+        "print(data_frame.loc[0])                                   # Selecting index label 0\n",
+        "print(data_frame.iloc[0] )                               # Selecting 1st row by position\n",
+        "print(data_frame.iloc[0:2])                               # Selecting 1st and 2nd row\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "881SvAb1u9yr",
+        "outputId": "f2fc867d-1bba-4bab-9294-12127289a17b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0      AI Engineer\n",
+            "1    Game Designer\n",
+            "Name: Career, dtype: object\n",
+            "   Name  Age\n",
+            "0  Pika   29\n",
+            "1  Meow   29\n",
+            "Name                          Pika\n",
+            "Age                             29\n",
+            "Career                 AI Engineer\n",
+            "Salary_per_annum             70000\n",
+            "Company             Google(London)\n",
+            "Name: 0, dtype: object\n",
+            "Name                          Pika\n",
+            "Age                             29\n",
+            "Career                 AI Engineer\n",
+            "Salary_per_annum             70000\n",
+            "Company             Google(London)\n",
+            "Name: 0, dtype: object\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Filtering data"
+      ],
+      "metadata": {
+        "id": "RrL1ux3tPOqc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "data = {\n",
+        "    \"Name\": [\"Pika\", \"Meow\"],\n",
+        "    \"Age\": [29, 29],\n",
+        "    \"Career\": [\"AI Engineer\", \"Game Designer\"],\n",
+        "    \"Salary\": [70000, 75000],\n",
+        "    \"Company\": [\"Google(London)\", \"Rockstar(London)\"]\n",
+        "    }\n",
+        "data_frame = pd.DataFrame(data)\n",
+        "High_pay = data_frame[data_frame[\"Salary\"]>71000]\n",
+        "print(High_pay)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kZ4Is5UbSlNE",
+        "outputId": "babd6b18-f378-4516-c6f8-d20d63f23f42"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Name  Age         Career  Salary           Company\n",
+            "1  Meow   29  Game Designer   75000  Rockstar(London)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Filter multiple conditions"
+      ],
+      "metadata": {
+        "id": "DF0nPSKDUFkT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "\n",
+        "data = {\n",
+        "    \"Patient_ID\": [101, 102, 103, 104, 105],\n",
+        "    \"Age\": [25, 40, 35, 55, 60],\n",
+        "    \"Blood_Pressure\": [120, 135, 128, 145, 150],\n",
+        "    \"Cholesterol\": [180, 210, 195, 240, 260],\n",
+        "    \"Risk\": [0, 1, 0, 1, 1]\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "filter = df[(df[\"Age\"]>35) & (df[\"Cholesterol\"]>210)]      # filtering multiple conditions\n",
+        "print(filter)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0m8FsmrLUQGC",
+        "outputId": "7a259b63-40dc-48ea-bec7-af1013b7a41b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Patient_ID  Age  Blood_Pressure  Cholesterol  Risk\n",
+            "3         104   55             145          240     1\n",
+            "4         105   60             150          260     1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "For OR conditions"
+      ],
+      "metadata": {
+        "id": "75No7NfwZHWb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "\n",
+        "data = {\n",
+        "    \"Patient_ID\": [101, 102, 103, 104, 105],\n",
+        "    \"Age\": [25, 40, 35, 55, 60],\n",
+        "    \"Blood_Pressure\": [120, 135, 128, 145, 150],\n",
+        "    \"Cholesterol\": [180, 210, 195, 240, 260],\n",
+        "    \"Risk\": [0, 1, 0, 1, 1]\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "filter = df[(df[\"Age\"]>40) | (df[\"Cholesterol\"]>230)]\n",
+        "print(filter)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xudY28e3ZGkk",
+        "outputId": "4c15d75a-c415-48ae-e204-728a50f7d6c6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Patient_ID  Age  Blood_Pressure  Cholesterol  Risk\n",
+            "3         104   55             145          240     1\n",
+            "4         105   60             150          260     1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Handling Missing values"
+      ],
+      "metadata": {
+        "id": "gGyUHcwNbqZA"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "data = {\n",
+        "       \"Name\": [\"Praj\", \"Harshi\", \"Pika\", \"Meow\"],\n",
+        "       \"Salary\": [74000, np.nan, 86000, 87000],\n",
+        "       \"Age\": [29, 29, np.nan, 30]\n",
+        "\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "print(df.isnull())           # find missing values\n",
+        "print(df.isnull().sum())     # count missing values\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DzHb4Y9Ub4c0",
+        "outputId": "dce9f31f-a056-4c2b-e58e-0995edeb447e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "    Name  Salary    Age\n",
+            "0  False   False  False\n",
+            "1  False    True  False\n",
+            "2  False   False   True\n",
+            "3  False   False  False\n",
+            "Name      0\n",
+            "Salary    1\n",
+            "Age       1\n",
+            "dtype: int64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Remove rows containing missing values"
+      ],
+      "metadata": {
+        "id": "eRffhxbwfPTG"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "data = {\n",
+        "       \"Name\": [\"Praj\", \"Harshi\", \"Pika\", \"Meow\"],\n",
+        "       \"Salary\": [74000, np.nan, 86000, 87000],\n",
+        "       \"Age\": [29, 29, np.nan, 30]\n",
+        "\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "remove_missing = df.dropna()             # remove missing values\n",
+        "print(remove_missing)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "W70WNL3ofSeh",
+        "outputId": "5aeb4ddf-e35c-458a-a256-3a35c05e77f4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Name   Salary   Age\n",
+            "0  Praj  74000.0  29.0\n",
+            "3  Meow  87000.0  30.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Replace missing values with column mean"
+      ],
+      "metadata": {
+        "id": "Vsr-dolji74Q"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "data = {\n",
+        "       \"Name\": [\"Praj\", \"Harshi\", \"Pika\", \"Meow\"],\n",
+        "       \"Salary\": [74000, np.nan, 86000, 87000],\n",
+        "       \"Age\": [29, 29, np.nan, 30]\n",
+        "\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "df[\"Age\"] = df[\"Age\"].fillna(df[\"Age\"].mean())\n",
+        "df[\"Salary\"] = df[\"Salary\"].fillna(df[\"Salary\"].mean())\n",
+        "\n",
+        "print(df)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "B7wzQWMEj0fv",
+        "outputId": "275213e3-903a-4d01-db08-6e05ab64254e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     Name        Salary        Age\n",
+            "0    Praj  74000.000000  29.000000\n",
+            "1  Harshi  82333.333333  29.000000\n",
+            "2    Pika  86000.000000  29.333333\n",
+            "3    Meow  87000.000000  30.000000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Other Functions\n",
+        "isnull() - Detect missing values\n",
+        "notnull() - Detect available values\n",
+        "dropna() - remove missing value rows or columns\n",
+        "fillna() - replacing missing values\n",
+        "interpolate() - estimate values between missing observations."
+      ],
+      "metadata": {
+        "id": "NkvSZnKyJdcP"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Pandas can identify duplicate data"
+      ],
+      "metadata": {
+        "id": "aaEkmfuzPqTz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(df.duplicated())"
+      ],
+      "metadata": {
+        "id": "aLH7iUaBPkHK"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Remove duplicate rows"
+      ],
+      "metadata": {
+        "id": "pU1QRt-b15bR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df = df.drop_duplicates()"
+      ],
+      "metadata": {
+        "id": "UDfG2sHk23-D"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Grouping and analyzing data"
+      ],
+      "metadata": {
+        "id": "_P-MQttR5PSb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "data = {\n",
+        "    \"Department\": [\n",
+        "        \"Manufacturing\",\n",
+        "        \"QC\",\n",
+        "        \"Manufacturing\",\n",
+        "        \"QC\",\n",
+        "        \"Manufacturing\",\n",
+        "        \"QC\",\n",
+        "        \"Manufacturing\",\n",
+        "        \"Engineering\"\n",
+        "    ],\n",
+        "    \"Incidents\": [2, 3, 4, 1, 6, 2, 7, 2]\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "# find the total number of incidents per department\n",
+        "\n",
+        "result = df.groupby(\"Department\")[\"Incidents\"].sum()\n",
+        "\n",
+        "print(result)\n",
+        "print(df.groupby(\"Department\")[\"Incidents\"].mean())     # finds the average incidents per department"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Cu8hLLI15S1O",
+        "outputId": "fc4e200f-4efd-44f7-e599-da8f493ec452"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Department\n",
+            "Engineering       2\n",
+            "Manufacturing    19\n",
+            "QC                6\n",
+            "Name: Incidents, dtype: int64\n",
+            "Department\n",
+            "Engineering      2.00\n",
+            "Manufacturing    4.75\n",
+            "QC               2.00\n",
+            "Name: Incidents, dtype: float64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Calculate multiple statistics"
+      ],
+      "metadata": {
+        "id": "kiqtXyVpFHml"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "data = {\n",
+        "    \"Department\": [\n",
+        "        \"Manufacturing\",\n",
+        "        \"QC\",\n",
+        "        \"Manufacturing\",\n",
+        "        \"QC\",\n",
+        "        \"Manufacturing\",\n",
+        "        \"QC\",\n",
+        "        \"Manufacturing\",\n",
+        "        \"Engineering\"\n",
+        "    ],\n",
+        "    \"Incidents\": [2, 3, 4, 1, 6, 2, 7, 2]\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "print(df.groupby(\"Department\")[\"Incidents\"].agg([\"count\", \"sum\", \"mean\", \"max\"]))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uTkof5QDFL4z",
+        "outputId": "40b1dedd-87dd-49e3-8afa-7cda091d0465"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "               count  sum  mean  max\n",
+            "Department                          \n",
+            "Engineering        1    2  2.00    2\n",
+            "Manufacturing      4   19  4.75    7\n",
+            "QC                 3    6  2.00    3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Sorting and creating columns"
+      ],
+      "metadata": {
+        "id": "Uo2h0iu7GIzr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "\n",
+        "df = pd.DataFrame({\n",
+        "    \"Name\": [\"Praj\", \"Harshi\", \"Pika\", \"Meow\"],\n",
+        "    \"Salary\": [74000, 86000, 87000, 90000]\n",
+        "})\n",
+        "\n",
+        "print(df.sort_values(\"Salary\"))\n",
+        "print(df.sort_values(\"Salary\", ascending=False))    # sorts from highest to lowest"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MQq8r41iGtjf",
+        "outputId": "ec0f945a-4280-4488-e474-e1ab9230636a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     Name  Salary\n",
+            "0    Praj   74000\n",
+            "1  Harshi   86000\n",
+            "2    Pika   87000\n",
+            "3    Meow   90000\n",
+            "     Name  Salary\n",
+            "3    Meow   90000\n",
+            "2    Pika   87000\n",
+            "1  Harshi   86000\n",
+            "0    Praj   74000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Converting pandas dataframes to numpy arrays"
+      ],
+      "metadata": {
+        "id": "-E9bcBwBL9Qr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "\n",
+        "data = {\n",
+        "       \"Age\": [29, 36, 23, 53, 34],\n",
+        "       \"Blood Pressure\": [120, 135, 128, 145, 150],\n",
+        "       \"Cholesterol\": [180, 210, 195, 240, 260]\n",
+        "       }\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "X = df.to_numpy()        # converts pandas df to numpy arrays\n",
+        "\n",
+        "print(X)\n",
+        "print(X.shape)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "S63AEZLEMHDo",
+        "outputId": "0d2f6e68-7c2a-4acb-c8fe-f817c21cbd3a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 29 120 180]\n",
+            " [ 36 135 210]\n",
+            " [ 23 128 195]\n",
+            " [ 53 145 240]\n",
+            " [ 34 150 260]]\n",
+            "(5, 3)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "This is useful as many Machine Learning libraries accept numpy as input."
+      ],
+      "metadata": {
+        "id": "MB1xBBorPHAL"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "\n",
+        "data = {\n",
+        "       \"Age\": [29, 36, 23, 53, 34],\n",
+        "       \"Blood Pressure\": [120, 135, 128, 145, 150],\n",
+        "       \"Cholesterol\": [180, 210, 195, 240, 260]\n",
+        "       }\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "X = df[[\"Age\", \"Blood Pressure\", \"Cholesterol\"]].to_numpy()\n",
+        "y = np.array([0, 1, 1])\n",
+        "\n",
+        "print(X)\n",
+        "print(y)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zVHLj-YoSmGX",
+        "outputId": "95244282-ae49-41d6-a7e3-b660da4f2ebf"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 29 120 180]\n",
+            " [ 36 135 210]\n",
+            " [ 23 128 195]\n",
+            " [ 53 145 240]\n",
+            " [ 34 150 260]]\n",
+            "[0 1 1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Saving cleaned datasets"
+      ],
+      "metadata": {
+        "id": "_YlWDtA39GEW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.to_csv(\"cleaned_patient.csv\", index=False)"
+      ],
+      "metadata": {
+        "id": "-l5MERtr9NRH"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "When you create a Pandas DataFrame, Pandas automatically assigns a number to each row. This is called the index.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "4Zo-SPmGCu2h"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Without index=False pandas saves index as an additional column."
+      ],
+      "metadata": {
+        "id": "37L9KLX8C2Q_"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Load it again"
+      ],
+      "metadata": {
+        "id": "XWmsluVd9kTt"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "new_df = pd.read_csv(\"cleaned_patient.csv\")"
+      ],
+      "metadata": {
+        "id": "zacp6jxv9mac"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Other useful format"
+      ],
+      "metadata": {
+        "id": "mjo0nvoADbfH"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. Excel\n",
+        "2. Parquet"
+      ],
+      "metadata": {
+        "id": "Qeljc21HDeJc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.to_excel(\"patients.xlsx\", index=False)\n",
+        "\n",
+        "df.to_parquet(\"patients.parquet\", index=False)"
+      ],
+      "metadata": {
+        "id": "pFYbIx1ODo5l"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "They require optional appropriate libraries such as openpyxl, and pyarrow."
+      ],
+      "metadata": {
+        "id": "dQjCFdw2DxOE"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Mini Project"
+      ],
+      "metadata": {
+        "id": "Icbk73P7EZWh"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Clean and analyze a quality dataset."
+      ],
+      "metadata": {
+        "id": "S-Q-trBQHRZH"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Your task is to:\n",
+        "1. Create a DataFrame.\n",
+        "2. Inspect the records.\n",
+        "3. Find missing values.\n",
+        "4. Fill missing investigation durations.\n",
+        "5. Filter high-priority incidents.\n",
+        "6. Calculate average closure time by department.:"
+      ],
+      "metadata": {
+        "id": "MwGsvZNRNNKS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "\n",
+        "# creating a Quality Data Set\n",
+        "\n",
+        "data = {\n",
+        "    \"Department\" : [\n",
+        "        \"Manufacturing\",\n",
+        "        \"QC\",\n",
+        "        \"Manufacturing\",\n",
+        "        \"QC\",\n",
+        "        \"Engineering\",\n",
+        "        \"Quality Assurance\",\n",
+        "        \"Manufacturing\",\n",
+        "        \"Quality Assurance\",\n",
+        "        \"Quality Assurance\",\n",
+        "        \"Manufacturing\",\n",
+        "        \"Engineering\",\n",
+        "        \"Quality Assurance\",\n",
+        "        \"Quality Assurance\",\n",
+        "        \"Quality Assurance\",\n",
+        "        \"Engineering\"\n",
+        "    ],\n",
+        "    \"Priority\": [\n",
+        "                \"High\",\n",
+        "                \"High\",\n",
+        "                \"Low\",\n",
+        "                \"High\",\n",
+        "                \"Low\",\n",
+        "                \"Low\",\n",
+        "                \"High\",\n",
+        "                \"High\",\n",
+        "                \"Low\",\n",
+        "                \"Low\",\n",
+        "                \"High\",\n",
+        "                \"Low\",\n",
+        "                \"High\",\n",
+        "                \"High\",\n",
+        "                \"High\"\n",
+        "    ],\n",
+        "    \"Closure\": [12, 9, 12, 15, np.nan, 5, 14, 11, np.nan, 9, 11, 12, 18, 10, 7]\n",
+        "    }\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "# inspect data\n",
+        "\n",
+        "print(df.head())\n",
+        "print(df.info())\n",
+        "\n",
+        "# find missing values\n",
+        "\n",
+        "print(df.isnull().sum())\n",
+        "\n",
+        "# fill the missing values with mean\n",
+        "\n",
+        "mean_closure = df[\"Closure\"].mean()\n",
+        "df[\"Closure\"] = df[\"Closure\"].fillna(mean_closure)\n",
+        "\n",
+        "\n",
+        "# filter high priority incidents\n",
+        "\n",
+        "high_priority = df[df[\"Priority\"] == \"High\"]\n",
+        "print(high_priority)\n",
+        "\n",
+        "# grouping and analzing\n",
+        "# total number of closure per department\n",
+        "\n",
+        "result = df.groupby(\"Department\")[\"Closure\"].sum()\n",
+        "print(result)\n",
+        "\n",
+        "# average closure by department\n",
+        "\n",
+        "avg_closure = df.groupby(\"Department\")[\"Closure\"].mean()\n",
+        "print(avg_closure)\n",
+        "\n",
+        "# save cleaned dataset\n",
+        "\n",
+        "df.to_csv(\"Cleaned_qality_data.csv\", index=False)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2-XTMSKnNXU_",
+        "outputId": "11f02002-00af-4078-af2f-65dbc97d6df5"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "      Department Priority  Closure\n",
+            "0  Manufacturing     High     12.0\n",
+            "1             QC     High      9.0\n",
+            "2  Manufacturing      Low     12.0\n",
+            "3             QC     High     15.0\n",
+            "4    Engineering      Low      NaN\n",
+            "<class 'pandas.core.frame.DataFrame'>\n",
+            "RangeIndex: 15 entries, 0 to 14\n",
+            "Data columns (total 3 columns):\n",
+            " #   Column      Non-Null Count  Dtype  \n",
+            "---  ------      --------------  -----  \n",
+            " 0   Department  15 non-null     object \n",
+            " 1   Priority    15 non-null     object \n",
+            " 2   Closure     13 non-null     float64\n",
+            "dtypes: float64(1), object(2)\n",
+            "memory usage: 492.0+ bytes\n",
+            "None\n",
+            "Department    0\n",
+            "Priority      0\n",
+            "Closure       2\n",
+            "dtype: int64\n",
+            "           Department Priority  Closure\n",
+            "0       Manufacturing     High     12.0\n",
+            "1                  QC     High      9.0\n",
+            "3                  QC     High     15.0\n",
+            "6       Manufacturing     High     14.0\n",
+            "7   Quality Assurance     High     11.0\n",
+            "10        Engineering     High     11.0\n",
+            "12  Quality Assurance     High     18.0\n",
+            "13  Quality Assurance     High     10.0\n",
+            "14        Engineering     High      7.0\n",
+            "Department\n",
+            "Engineering          29.153846\n",
+            "Manufacturing        47.000000\n",
+            "QC                   24.000000\n",
+            "Quality Assurance    67.153846\n",
+            "Name: Closure, dtype: float64\n",
+            "Department\n",
+            "Engineering           9.717949\n",
+            "Manufacturing        11.750000\n",
+            "QC                   12.000000\n",
+            "Quality Assurance    11.192308\n",
+            "Name: Closure, dtype: float64\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
