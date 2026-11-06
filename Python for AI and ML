@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyNOoqhtntcQDJ49/6pV68OW",
+      "authorship_tag": "ABX9TyNah4nHARg6RQZKR288wI1i",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -7322,6 +7322,21 @@
           "metadata": {}
         }
       ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "- Values close to +1: strong positive relationship.\n",
+        "- Values close to -1: strong negative relationship.\n",
+        "- Values close to 0: weak linear relationship.\n",
+        "The diagonal is always 1.0, because every variable has a perfect correlation with itself.\n",
+        "\n",
+        "AI engineering connection: Heatmaps can help you identify potentially redundant features before training a model. However, don't automatically remove highly correlated features; consider the model, domain knowledge and validation results."
+      ],
+      "metadata": {
+        "id": "6rs52L25Pul2"
+      }
     }
   ]
 }
